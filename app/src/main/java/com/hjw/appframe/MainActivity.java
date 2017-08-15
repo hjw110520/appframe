@@ -8,7 +8,7 @@ import android.widget.Button;
 import com.hjw.appframe.api.param.GetIpInfoParam;
 import com.hjw.appframe.api.entity.IpInfoEntity;
 import com.hjw.appframe.api.result.IpInfoResult;
-import com.hjw.base.utils.SimpleLog;
+import com.hjw.base.utils.LogUtils;
 import com.hjw.network.api.RequestUtils;
 import com.hjw.network.callback.APICallBack;
 
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     RequestUtils.getInstance().doHttpGet(domain,getIpInfoUrl,param,IpInfoResult.class,new APICallBack<IpInfoEntity,IpInfoResult>(){
                         @Override
                         public void onSuccess(IpInfoEntity data) {
-                            SimpleLog.debug(data.country);
+                            LogUtils.debug(data.country);
                         }
                     });
                 }

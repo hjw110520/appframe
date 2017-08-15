@@ -1,18 +1,13 @@
 package com.hjw.network.api;
 
-import android.util.Log;
-
 import com.hjw.base.utils.BaseConfig;
 import com.hjw.base.utils.Md5Util;
-import com.hjw.base.utils.SimpleLog;
+import com.hjw.base.utils.LogUtils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -101,8 +96,8 @@ public class ParametersUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        SimpleLog.info("key:"+key);
-        SimpleLog.info("sign:"+sign);
+        LogUtils.info("key:"+key);
+        LogUtils.info("sign:"+sign);
         params.put("signature", sign);
     }
 }

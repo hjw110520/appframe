@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 /**
  * 提供给实际应用的LOG日志类
  */
-public class SimpleLog {
+public class LogUtils {
     /**
      * 日志级别
      */
@@ -28,9 +28,9 @@ public class SimpleLog {
      */
     public static void verbose(String msg)
     {
-        if (Log.VERBOSE >= LOG_LEVEL)
+        if (android.util.Log.VERBOSE >= LOG_LEVEL)
         {
-            Log.v(getTag(), msg);
+            android.util.Log.v(getTag(), msg);
         }
     }
 
@@ -42,9 +42,9 @@ public class SimpleLog {
      */
     public static void debug(String msg)
     {
-        if (Log.DEBUG >= LOG_LEVEL)
+        if (android.util.Log.DEBUG >= LOG_LEVEL)
         {
-            Log.d(getTag(), msg);
+            android.util.Log.d(getTag(), msg);
         }
     }
 
@@ -56,9 +56,9 @@ public class SimpleLog {
      */
     public static void info(String msg)
     {
-        if (Log.INFO >= LOG_LEVEL)
+        if (android.util.Log.INFO >= LOG_LEVEL)
         {
-            Log.i(getTag(), msg);
+            android.util.Log.i(getTag(), msg);
         }
     }
 
@@ -70,9 +70,9 @@ public class SimpleLog {
      */
     public static void warn(String msg)
     {
-        if (Log.WARN >= LOG_LEVEL)
+        if (android.util.Log.WARN >= LOG_LEVEL)
         {
-            Log.w(getTag(), msg);
+            android.util.Log.w(getTag(), msg);
         }
     }
 
@@ -84,19 +84,19 @@ public class SimpleLog {
      */
     public static void error(String msg)
     {
-        if (Log.ERROR >= LOG_LEVEL)
+        if (android.util.Log.ERROR >= LOG_LEVEL)
         {
             String tag = getTag();
-            Log.e(tag, msg);
+            android.util.Log.e(tag, msg);
         }
     }
 
     public static void error(String msg, Throwable tr)
     {
-        if (Log.ERROR >= LOG_LEVEL)
+        if (android.util.Log.ERROR >= LOG_LEVEL)
         {
             String tag = getTag();
-            Log.e(tag, msg, tr);
+            android.util.Log.e(tag, msg, tr);
         }
     }
 

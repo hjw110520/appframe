@@ -16,7 +16,7 @@ public class ViewTextUtils {
      */
     public static void setText(TextView view, CharSequence text, String format, String defaultValue) {
         if (view == null) {
-            SimpleLog.error("setText view is null");
+            LogUtils.error("setText view is null");
             return;
         }
 
@@ -59,7 +59,7 @@ public class ViewTextUtils {
 
     public static void appendText(TextView view, CharSequence text, String format) {
         if (view == null) {
-            SimpleLog.error("setText view is null");
+            LogUtils.error("setText view is null");
             return;
         }
 
@@ -97,7 +97,7 @@ public class ViewTextUtils {
      */
     public static boolean isEmpty(TextView view) {
         if (view == null) {
-            SimpleLog.error("view is null");
+            LogUtils.error("view is null");
             return true;
         }
         String text = view.getText().toString().trim();
@@ -115,7 +115,7 @@ public class ViewTextUtils {
      */
     public static String getText(TextView view) {
         if (view == null) {
-            SimpleLog.error("view is null");
+            LogUtils.error("view is null");
             return "";
         }
         String text = view.getText().toString().trim().replaceAll(" ", "");
@@ -127,7 +127,7 @@ public class ViewTextUtils {
 
     public static int getIntText(TextView view, int def) {
         if (view == null) {
-            SimpleLog.error("view is null");
+            LogUtils.error("view is null");
             return def;
         }
         String text = view.getText().toString().trim();
@@ -137,7 +137,7 @@ public class ViewTextUtils {
         try {
             return Integer.parseInt(text);
         } catch (Exception e) {
-            SimpleLog.error(text + " is not a int value");
+            LogUtils.error(text + " is not a int value");
             return def;
         }
     }

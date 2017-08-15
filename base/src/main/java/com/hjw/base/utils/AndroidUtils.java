@@ -46,7 +46,7 @@ public class AndroidUtils {
 			PackageInfo pi = pm.getPackageInfo(BaseApplication.getAppContext().getPackageName(), 0);
 			versionCode = pi.versionCode;
 		} catch (Exception e) {
-			SimpleLog.error("getAppVersionCode Exception: " + e.getMessage());
+			LogUtils.error("getAppVersionCode Exception: " + e.getMessage());
 		}
 		return versionCode;
 	}
@@ -66,7 +66,7 @@ public class AndroidUtils {
 				return defVersion;
 			}
 		} catch (Exception e) {
-			SimpleLog.error("getAppVersionName Exception: " + e.getMessage());
+			LogUtils.error("getAppVersionName Exception: " + e.getMessage());
 		}
 		return versionName;
 	}
@@ -86,7 +86,7 @@ public class AndroidUtils {
 			}
 			return (T) metaData.get(key);
 		} catch (Exception e) {
-			SimpleLog.error("getMetaData Exception: " + e.getMessage());
+			LogUtils.error("getMetaData Exception: " + e.getMessage());
 			return null;
 		}
 	}

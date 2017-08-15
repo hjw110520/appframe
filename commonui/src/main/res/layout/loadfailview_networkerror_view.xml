@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_network_view"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_refresh_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/failed_refresh_icon" />
+
+    <TextView
+        android:id="@+id/failed_text_reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_refresh_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="网络异常"
+        android:textColor="#666666"
+        android:textSize="14dp" />
+    <TextView
+        android:id="@+id/failed_text_reason_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/failed_text_reason"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="点击屏幕，重新加载"
+        android:textColor="#666666"
+        android:textSize="14dp" />
+</LinearLayout>

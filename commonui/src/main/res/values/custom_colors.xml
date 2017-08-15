@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="simple_text_color1">#666666</color> <!-- 深颜色的正文-->
+    <color name="simple_text_color2">#999999</color> <!-- 浅颜色的正文 -->
+    <color name="simple_text_color3">#ff3939</color> <!-- 红色的 如单价 -->
+    <color name="simple_text_color4">#d6d6d6</color> <!-- main tab 的未选中 -->
+    <color name="simple_text_color4_press">#fec40d</color> <!-- main tab 的选中 -->
+    <color name="simple_text_color5">#d38144</color> <!-- 分类中选中的颜色 -->
+    <color name="simple_text_color6">#898989</color> <!-- 按钮不能选 -->
+    <color name="simple_text_color15">#333333</color>
+
+    <color name="simple_bg_color1">#fec40d</color> <!-- 除根分类页中的黄色字体一样的颜色之外的所有黄色-->
+    <color name="simple_bg_color2">#f7f8f8 </color> <!-- 所有背景色 -->
+    <color name="simple_bg_color3">#c9caca</color> <!-- 移出购物车和取消按钮-->
+    <color name="simple_bg_color4">#ff3939</color> <!-- 所有的红色按钮 -->
+    <color name="simple_bg_color5">#efefef</color> <!-- 不能选择的选项-->
+    <color name="simple_bg_color6">#fcfcfc</color> <!-- 菜单栏颜色 -->
+    <color name="simple_bg_color7">#000000</color> <!-- 菜单栏颜色 -->
+</resources>

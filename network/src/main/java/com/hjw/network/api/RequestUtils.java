@@ -1,6 +1,6 @@
 package com.hjw.network.api;
 import com.hjw.network.callback.IAPICallback;
-import com.hjw.network.okhttp.OkHttpProvider;
+import com.hjw.network.okhttp.OkHttpUtils;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -29,15 +29,18 @@ public class RequestUtils {
         return instance;
     }
 
-    public <T extends BaseEntity,R extends BaseResult<T>>  void doHttpGet(String domain,String apiUrl,BaseRequestParam param,final Class<R> clz,final IAPICallback callBack){
-        ApiConfig apiConfig = new ApiConfig.Builder().build();
-        OkHttpClient okHttpClient = OkHttpProvider.getSimpleOkHttpClient(apiConfig,domain);
+    public <T extends BaseEntity,R extends BaseResult<T>>  void get(String apiUrl,BaseRequestParam param,final Class<R> clz,final IAPICallback callBack){
+        get(null,apiUrl,param,clz,callBack);
+    }
+
+    public <T extends BaseEntity,R extends BaseResult<T>>  void get(OkHttpConfig apiConfig,String apiUrl,BaseRequestParam param,final Class<R> clz,final IAPICallback callBack){
+        OkHttpClient okHttpClient = OkHttpUtils.getInstance().getOkHttpClient(apiConfig);
         /*创建retrofit对象*/
         Retrofit retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .baseUrl(domain)
+                .baseUrl(apiConfig.getServerDomain())
                 .build();
         IBaseRequest baseRequest = retrofit.create(IBaseRequest.class);
 
@@ -72,6 +75,5 @@ public class RequestUtils {
                         callBack.onResponse(baseEntityBaseResult,clz);
                     }
                 });;
-
     }
 }

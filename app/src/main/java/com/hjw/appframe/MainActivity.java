@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.hjw.appframe.api.ApiConfig;
 import com.hjw.appframe.api.param.GetIpInfoParam;
 import com.hjw.appframe.api.entity.IpInfoEntity;
 import com.hjw.appframe.api.result.IpInfoResult;
@@ -13,8 +14,6 @@ import com.hjw.network.api.RequestUtils;
 import com.hjw.network.callback.APICallBack;
 
 public class MainActivity extends AppCompatActivity {
-        String domain = "http://ip.taobao.com/service/";
-        String getIpInfoUrl = "getIpInfo.php";
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             testBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    RequestUtils.getInstance().doHttpGet(domain,getIpInfoUrl,param,IpInfoResult.class,new APICallBack<IpInfoEntity,IpInfoResult>(){
+                    RequestUtils.getInstance().get(ApiConfig.GetIpInfoUrl,param,IpInfoResult.class,new APICallBack<IpInfoEntity,IpInfoResult>(){
                         @Override
                         public void onSuccess(IpInfoEntity data) {
                             LogUtils.debug(data.country);

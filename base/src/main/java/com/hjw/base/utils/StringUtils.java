@@ -165,7 +165,7 @@ public class StringUtils {
 	}
 
 	public static String replace(String str, String oldSubStr, String newSubStr) {
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 		int i = 0;
 		int j = 0;
 		int len = oldSubStr.length();
@@ -331,5 +331,21 @@ public class StringUtils {
 			stringBuffer.append(a.charAt(i));
 		}
 		return new String(stringBuffer);
+	}
+
+	/**
+	 * 判断连个str是否相等，都为空是相等
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
+	public static boolean checkStringEquals(String str1,String str2){
+		if(StringUtils.isEmpty(str1) && StringUtils.isEmpty(str2)){
+			return true;
+		}
+		if(!StringUtils.isEmpty(str1) && !StringUtils.isEmpty(str2) && str1.equals(str2)){
+			return true;
+		}
+		return false;
 	}
 }

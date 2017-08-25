@@ -1,19 +1,15 @@
 package com.hjw.network.okhttp;
 
-import com.hjw.base.utils.LogUtils;
-import com.hjw.base.utils.StringUtils;
-import com.hjw.network.BuildConfig;
 import com.hjw.network.api.OkHttpConfig;
 import com.hjw.network.okhttp.interceptor.HeaderInterceptor;
+import com.hjw.network.okhttp.interceptor.LoggingInterceptor;
 import com.hjw.network.okhttp.interceptor.RetryInterceptor;
 
 import java.util.Map;
-import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 
 public class OkHttpUtils {
 
@@ -39,10 +35,13 @@ public class OkHttpUtils {
         return instance;
     }
 
+    public OkHttpConfig getMDefaultConfig(){
+        return mDefaultConfig;
+    }
+
     public void initDefaultOkHttpClient(OkHttpConfig mDefaultOkHttpConfig){
-        mDefaultClient = new OkHttpClient();
         mDefaultConfig = mDefaultOkHttpConfig;
-        getOkHttpClient(mDefaultConfig,mDefaultClient);
+        mDefaultClient = initOkHttpClient(mDefaultConfig);
     }
 
     public  OkHttpClient getDefaultOkHttpClient() {
@@ -69,25 +68,20 @@ public class OkHttpUtils {
             return client;
         }
 
-        client = getOkHttpClient(mOkHttpConfig,new OkHttpClient());
+        client = initOkHttpClient(mOkHttpConfig);
         otherClientMap.put(key,client);
         return client;
     }
 
-    private  OkHttpClient getOkHttpClient(OkHttpConfig mOkHttpConfig,OkHttpClient okHttpClient) {
-        OkHttpClient.Builder builder = okHttpClient.newBuilder();
-        builder.addInterceptor(new HeaderInterceptor(mOkHttpConfig))
+    private  OkHttpClient initOkHttpClient(OkHttpConfig mOkHttpConfig) {
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(new HeaderInterceptor(mOkHttpConfig))
+                .addInterceptor(new LoggingInterceptor())
                 .addInterceptor(new RetryInterceptor(mOkHttpConfig))
                 .retryOnConnectionFailure(false)
                 .connectTimeout(mOkHttpConfig.getConnectionTime(), TimeUnit.SECONDS)
                 .readTimeout(mOkHttpConfig.getReadTime(), TimeUnit.SECONDS)
-                .writeTimeout(mOkHttpConfig.getWriteTime(), TimeUnit.SECONDS)
-                .build();
-        if (BuildConfig.DEBUG) {//printf logs while  debug
-            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-            okHttpClient = okHttpClient.newBuilder().addInterceptor(logging).build();
-        }
+                .writeTimeout(mOkHttpConfig.getWriteTime(), TimeUnit.SECONDS).build();
         return okHttpClient;
     }
 }

@@ -1,10 +1,9 @@
 package com.hjw.network.callback;
 
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.hjw.base.utils.JsonUtils;
 import com.hjw.base.utils.StringUtils;
 import com.hjw.base.utils.ToastUtils;
+import com.hjw.network.BuildConfig;
 import com.hjw.network.api.BaseEntity;
 import com.hjw.network.api.BaseResult;
 import com.hjw.network.exception.ErrorCode;
@@ -56,6 +55,9 @@ public class  APICallBack <T extends BaseEntity,R extends BaseResult<T>>  implem
 
     @Override
     public void onFailure(Throwable t) {
+        if(BuildConfig.DEBUG){
+            t.printStackTrace();
+        }
         ToastUtils.showToast("服务器异常："+t.getMessage());
     }
 

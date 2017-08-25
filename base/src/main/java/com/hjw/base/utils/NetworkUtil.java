@@ -49,14 +49,19 @@ public class NetworkUtil {
 	}
 
 	// 判断当前连接的是什么网络类型
-	public static String getNetworkTypeName(Context context) {
-
+	public static NetWorkType getNetworkType(Context context) {
 		ConnectivityManager manager = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo activeNetworkInfo = manager.getActiveNetworkInfo();
-		if (activeNetworkInfo != null) {
-			return activeNetworkInfo.getTypeName();
+		if (activeNetworkInfo == null) {
+			return NetWorkType.NONE;
 		}
-		return "";
+		int nType = activeNetworkInfo.getType();
+		if(nType == ConnectivityManager.TYPE_MOBILE){
+			return NetWorkType.MOBILE;
+		}else if (nType == ConnectivityManager.TYPE_WIFI) {
+			return NetWorkType.WIFI;
+		}
+		return NetWorkType.NONE;
 	}
 }

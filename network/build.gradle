@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
-
+    publishNonDefault true
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
@@ -39,5 +39,7 @@ dependencies {
     //okhttp相关依赖
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-    compile project(':base')
+    //compile project(':base')
+    releaseCompile project(path:':base', configuration:'release')
+    debugCompile project(path:':base', configuration:'debug')
 }

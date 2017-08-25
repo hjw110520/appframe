@@ -10,11 +10,19 @@ android {
         versionCode 2
         versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //arouter init
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug{
         }
     }
 }
@@ -28,7 +36,21 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.+'
     testCompile 'junit:junit:4.12'
-    compile project(':base')
-    compile project(':network')
-    compile project(':commonui')
+
+    releaseCompile project(path:':base', configuration:'release')
+    debugCompile project(path:':base', configuration:'debug')
+
+    releaseCompile project(path:':network', configuration:'release')
+    debugCompile project(path:':network', configuration:'debug')
+
+    releaseCompile project(path:':commonui', configuration:'release')
+    debugCompile project(path:':commonui', configuration:'debug')
+
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+
+    //arouter init
+    compile 'com.alibaba:arouter-api:1.2.2'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
 }

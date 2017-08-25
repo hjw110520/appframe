@@ -35,6 +35,9 @@ public class RequestUtils {
 
     public <T extends BaseEntity,R extends BaseResult<T>>  void get(OkHttpConfig apiConfig,String apiUrl,BaseRequestParam param,final Class<R> clz,final IAPICallback callBack){
         OkHttpClient okHttpClient = OkHttpUtils.getInstance().getOkHttpClient(apiConfig);
+        if(null == apiConfig){
+            apiConfig = OkHttpUtils.getInstance().getMDefaultConfig();
+        }
         /*创建retrofit对象*/
         Retrofit retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
@@ -47,6 +50,7 @@ public class RequestUtils {
         if(null == param){
             param = new BaseRequestParam();
         }
+
         ParametersUtils parametersUtils = new ParametersUtils(param);
 
         Observable<String> observable = baseRequest.Obget(apiUrl,parametersUtils.getReqMap());

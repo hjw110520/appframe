@@ -1,4 +1,5 @@
 package com.hjw.commonui;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -37,6 +38,7 @@ public abstract class BaseActivity extends FragmentActivity{
             mRootView = contentView;
             setContentView(contentView);
         }
+
         initView(savedInstanceState);
         initListener();
         initBroadcast();

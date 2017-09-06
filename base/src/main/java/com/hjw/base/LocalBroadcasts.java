@@ -26,8 +26,8 @@ public class LocalBroadcasts {
 	 */
 	public static void registerLocalReceiver(BroadcastReceiver receiver, String...actions) {
         if (null == receiver) {
-            return ;
-        }
+			return ;
+		}
 		if (null == actions || actions.length == 0) {
 			return ;
 		}

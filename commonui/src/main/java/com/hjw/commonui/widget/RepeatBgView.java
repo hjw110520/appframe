@@ -7,13 +7,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
-/**
- * 重复绘制背景图片的View；
- *
- * 使用tag标注repeatX还是repeatY，或者是repeatXY；
- *
- * Created by evan on 14-10-25.
- */
 public class RepeatBgView extends View {
 
     private static final String REPEAT_X = "x";

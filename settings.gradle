@@ -1,1 +1,1 @@
-include ':app', ':base', ':commonui', ':network'
+include ':app', ':base', ':commonui', ':network', ':jsbridgecore', ':jsbridgeannotaton'

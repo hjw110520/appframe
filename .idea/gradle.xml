@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/commonui" />
+            <option value="$PROJECT_DIR$/jsbridgeannotaton" />
+            <option value="$PROJECT_DIR$/jsbridgecore" />
             <option value="$PROJECT_DIR$/network" />
           </set>
         </option>

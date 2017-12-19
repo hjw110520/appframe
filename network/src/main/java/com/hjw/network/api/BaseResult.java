@@ -1,11 +1,8 @@
 package com.hjw.network.api;
 
 /**
- * Created by hjw on 2017/8/10.14:56
+ * Created by Administrator on 2017/12/19 0019.
  */
 
-public class BaseResult<T extends BaseEntity> {
-    public int code;
-    public String desc;
-    public T data;
+public class BaseResult {
 }

@@ -223,4 +223,5 @@ public class AndroidUtils {
 					+ "\" in manifest.xml!");
 		}
 	}
+
 }

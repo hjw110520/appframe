@@ -6,13 +6,16 @@ import android.widget.Button;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjw.appframe.api.ApiConfig;
-import com.hjw.appframe.api.entity.IpInfoEntity;
 import com.hjw.appframe.api.param.GetIpInfoParam;
 import com.hjw.appframe.api.result.IpInfoResult;
+import com.hjw.appframe.api.result.TestResult;
 import com.hjw.base.utils.ToastUtils;
 import com.hjw.commonui.BaseActivity;
 import com.hjw.network.api.RequestUtils;
 import com.hjw.network.callback.APICallBack;
+import com.hjw.network.callback.APIListCallBack;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,10 +51,17 @@ public class MainActivity extends BaseActivity {
     public void onTestBtnClick(){
         final GetIpInfoParam param = new GetIpInfoParam();
         param.ip = "63.223.108.42";
-        RequestUtils.getInstance().get(ApiConfig.GetIpInfoUrl,param,IpInfoResult.class,new APICallBack<IpInfoEntity,IpInfoResult>(){
+        RequestUtils.getInstance().get(ApiConfig.GetIpInfoUrl,param,IpInfoResult.class,new APICallBack<IpInfoResult>(){
             @Override
-            public void onSuccess(IpInfoEntity data) {
+            public void onSuccess(IpInfoResult data) {
                 ToastUtils.showToast(data.country);
+            }
+        });
+
+        RequestUtils.getInstance().get(ApiConfig.GetIpInfoUrl,param,IpInfoResult.class,new APIListCallBack<TestResult>(){
+            @Override
+            public void onListSuccess(List<TestResult> result) {
+                super.onListSuccess(result);
             }
         });
     }

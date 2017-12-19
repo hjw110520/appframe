@@ -29,11 +29,23 @@ public class RequestUtils {
         return instance;
     }
 
-    public <T extends BaseEntity,R extends BaseResult<T>>  void get(String apiUrl,BaseRequestParam param,final Class<R> clz,final IAPICallback callBack){
+    public  void get(String apiUrl, BaseRequestParam param, final Class clz, final IAPICallback callBack){
         get(null,apiUrl,param,clz,callBack);
     }
 
-    public <T extends BaseEntity,R extends BaseResult<T>>  void get(OkHttpConfig apiConfig,String apiUrl,BaseRequestParam param,final Class<R> clz,final IAPICallback callBack){
+    public  void get(OkHttpConfig apiConfig, String apiUrl, BaseRequestParam param, final Class clz, final IAPICallback callBack){
+        doRequest(apiConfig,apiUrl,param,clz,callBack,true);
+    }
+
+    public   void post(String apiUrl, BaseRequestParam param, final Class clz, final IAPICallback callBack){
+        post(null,apiUrl,param,clz,callBack);
+    }
+
+    public   void post(OkHttpConfig apiConfig, String apiUrl, BaseRequestParam param, final Class clz, final IAPICallback callBack){
+        doRequest(apiConfig,apiUrl,param,clz,callBack,false);
+    }
+
+    private  void doRequest(OkHttpConfig apiConfig, String apiUrl, BaseRequestParam param, final Class clz, final IAPICallback callBack, boolean isGet){
         OkHttpClient okHttpClient = OkHttpUtils.getInstance().getOkHttpClient(apiConfig);
         if(null == apiConfig){
             apiConfig = OkHttpUtils.getInstance().getMDefaultConfig();
@@ -53,7 +65,13 @@ public class RequestUtils {
 
         ParametersUtils parametersUtils = new ParametersUtils(param);
 
-        Observable<String> observable = baseRequest.Obget(apiUrl,parametersUtils.getReqMap());
+        Observable<String> observable;
+        if(isGet){
+            observable = baseRequest.Obget(apiUrl,parametersUtils.getReqMap());
+        }else {
+            observable = baseRequest.Obpost(apiUrl,parametersUtils.getReqMap());
+        }
+
 
         observable.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

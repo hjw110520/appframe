@@ -3,7 +3,7 @@ package com.hjw.base.utils;
 public class BaseConfig {
 
     // 默认，由外部配置
-    public static String DOMAIN = "";//http://kidapi.vipkid.com";
+    public static String DOMAIN = "";
     public static String SOURCE="";
     public static String SESSION_DOMAIN = "";
     public static String SESSION_FDS_DOMAIN = "";

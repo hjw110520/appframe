@@ -98,4 +98,74 @@ public class RequestUtils {
                     }
                 });;
     }
+
+    private <T extends  BaseResult>  void doRequestV2(OkHttpConfig apiConfig, String apiUrl, BaseRequestParam param, final Class<T> clz, final IAPICallback callBack, boolean isGet){
+        OkHttpClient okHttpClient = OkHttpUtils.getInstance().getOkHttpClient(apiConfig);
+        if(null == apiConfig){
+            apiConfig = OkHttpUtils.getInstance().getMDefaultConfig();
+        }
+        /*创建retrofit对象*/
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(okHttpClient)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .baseUrl(apiConfig.getServerDomain())
+                .build();
+        IBaseRequestV2 baseRequest = retrofit.create(IBaseRequestV2.class);
+
+        if(null == param){
+            param = new BaseRequestParam();
+        }
+
+        ;
+        ParametersUtils parametersUtils = new ParametersUtils(param);
+        Observable<T> observable;
+        if(isGet){
+            observable = baseRequest.Obget(apiUrl,parametersUtils.getReqMap());
+        }else {
+            observable = baseRequest.Obpost(apiUrl,parametersUtils.getReqMap());
+        }
+
+        Subscriber subscriber = new Subscriber<T>() {
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(T o) {
+
+            }
+        };
+
+        observable.subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<String>() {
+                    @Override
+                    public void onCompleted() {
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if(null == callBack){
+                            return;
+                        }
+                        callBack.onFailure(e);
+                    }
+
+                    @Override
+                    public void onNext(String baseEntityBaseResult) {
+                        if(null == callBack){
+                            return;
+                        }
+                        callBack.onResponse(baseEntityBaseResult,clz);
+                    }
+                });
+    }
 }

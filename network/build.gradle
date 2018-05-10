@@ -42,4 +42,7 @@ dependencies {
     //compile project(':base')
     releaseCompile project(path:':base', configuration:'release')
     debugCompile project(path:':base', configuration:'debug')
+
+
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
 }

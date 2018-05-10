@@ -53,4 +53,5 @@ dependencies {
     //arouter init
     compile 'com.alibaba:arouter-api:1.2.2'
     annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
+
 }

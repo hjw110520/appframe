@@ -15,7 +15,7 @@ import rx.schedulers.Schedulers;
  * Created by hjw on 2017/8/10.17:05
  */
 
-public class RequestUtils {
+public class RequestUtils{
     private static RequestUtils instance;
     private RequestUtils(){}
     public static RequestUtils getInstance(){
@@ -99,12 +99,12 @@ public class RequestUtils {
                 });;
     }
 
-    private <T extends  BaseResult>  void doRequestV2(OkHttpConfig apiConfig, String apiUrl, BaseRequestParam param, final Class<T> clz, final IAPICallback callBack, boolean isGet){
+    /*private <T extends  BaseResult>  void doRequestV2(OkHttpConfig apiConfig, String apiUrl, BaseRequestParam param, final Class<T> clz, final IAPICallback callBack, boolean isGet){
         OkHttpClient okHttpClient = OkHttpUtils.getInstance().getOkHttpClient(apiConfig);
         if(null == apiConfig){
             apiConfig = OkHttpUtils.getInstance().getMDefaultConfig();
         }
-        /*创建retrofit对象*/
+        *//*创建retrofit对象*//*
         Retrofit retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -167,5 +167,5 @@ public class RequestUtils {
                         callBack.onResponse(baseEntityBaseResult,clz);
                     }
                 });
-    }
+    }*/
 }

@@ -2,6 +2,9 @@ package com.hjw.network.api;
 import com.hjw.network.callback.IAPICallback;
 import com.hjw.network.okhttp.OkHttpUtils;
 
+import java.net.URL;
+import java.net.URLEncoder;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -67,7 +70,7 @@ public class RequestUtils{
 
         Observable<String> observable;
         if(isGet){
-            observable = baseRequest.Obget(apiUrl,parametersUtils.getReqMap());
+            observable = baseRequest.Obget(apiUrl+parametersUtils.getReqParamURL());
         }else {
             observable = baseRequest.Obpost(apiUrl,parametersUtils.getReqMap());
         }

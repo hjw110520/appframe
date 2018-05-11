@@ -10,11 +10,18 @@
         android:layout_height="100dp"
         android:text="testBtn"
         android:textColor="#000000" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/contentTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </ScrollView>
 
-    <Button
-        android:id="@+id/toSwipeRefreshActivityBtn"
-        android:layout_width="368dp"
-        android:layout_height="100dp"
-        android:text="SwipeRefreshActivity"
-        android:textColor="#000000" />
 </LinearLayout>

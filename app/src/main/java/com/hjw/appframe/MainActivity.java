@@ -1,11 +1,16 @@
 package com.hjw.appframe;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.hjw.appframe.manager.ApiManager;
+import com.hjw.appframe.model.ChapterDetail;
 import com.hjw.commonui.BaseActivity;
+import com.hjw.network.callback.SimpleCallBack;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,8 +20,7 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity {
 
     @BindView(R.id.testBtn) Button testBtn;
-    @BindView(R.id.toSwipeRefreshActivityBtn) Button toSwipeRefreshActivityBtn;
-
+    @BindView(R.id.contentTv)TextView contentTv;
     @Override
     protected int provideLayoutResId() {
         return R.layout.activity_main;
@@ -39,10 +43,13 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.testBtn)
     public void onTestBtnClick(){
-    }
-
-    @OnClick(R.id.toSwipeRefreshActivityBtn)
-    public void onToSwipeRefreshActivityBtn(){
-        ARouter.getInstance().build(PathConfig.PATH_SWIPE_REFRESH_ACTIVITY).navigation();
+        ApiManager apiManager = new ApiManager();
+        apiManager.getChapterDetail(new SimpleCallBack(){
+            @Override
+            public void onSuccess(Object result) {
+                ChapterDetail chapterDetail = (ChapterDetail)result;
+                contentTv.setText(Html.fromHtml(chapterDetail.content));
+            }
+        });
     }
 }

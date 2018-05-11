@@ -28,7 +28,7 @@ public class ParametersUtils {
         }
     });
 
-    public ParametersUtils(BaseRequestParam baseParam) {
+    public ParametersUtils(BaseRequestParam baseParam){
         parseFromObject(baseParam);
         processMd5Signature();
     }
@@ -51,7 +51,7 @@ public class ParametersUtils {
             Object val = entry.getValue();
             try {
                 urlBuilder.append(
-                        "&" + key + "=" + URLEncoder.encode(String.valueOf(val), "utf-8"));
+                        "&" + key + "=" + URLEncoder.encode(String.valueOf(val), "gb2312"));
             } catch (UnsupportedEncodingException e) {
                 urlBuilder.append("&" + key + "=" + val);
             }
@@ -64,7 +64,7 @@ public class ParametersUtils {
         return paramUrl;
     }
 
-    private void parseFromObject(BaseRequestParam baseParam) {
+    private void parseFromObject(BaseRequestParam baseParam){
         Field[] fs = baseParam.getClass().getDeclaredFields();
         for (int i = 0; i < fs.length; i++) {
             Field f = fs[i];

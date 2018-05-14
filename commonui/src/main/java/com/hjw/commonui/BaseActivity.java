@@ -85,7 +85,7 @@ public abstract class BaseActivity extends FragmentActivity{
     /**
      * 步骤二：初始化View的Listener，比如onClick等监听器
      */
-    protected abstract void initListener();
+    protected  void initListener(){};
 
     /**
      * 步骤三：初始化数据

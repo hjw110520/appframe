@@ -26,13 +26,14 @@ import java.util.List;
 
 public class ApiManager {
     public static final String CONTENT_ID = "content";
-    public void searchByKeyWord(){
+    public void searchByKeyWord(final SimpleCallBack callBack){
         SearchParam searchParam = new SearchParam();
         searchParam.searchkey = "恶魔法则";//URLEncoder.encode("恶魔法则","gb2312");
         RequestUtils.getInstance().get(ApiConfig.API_SEARCH,searchParam,String.class,new HtmlCallBack(){
             @Override
             public void onSuccess(Document htmlDoc) {
                 List<BookSearchInfo> list = ParsHelper.getHtmlPars(ParsType.DingDian).parsBookSearchInfo(htmlDoc);
+                callBack.onSuccess(list);
             }
         });
     }

@@ -1,12 +1,15 @@
 package com.hjw.appframe.reader.ui.fragment;
 
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.hjw.appframe.R;
 import com.hjw.appframe.reader.ui.adapter.BookShelfListAdapter;
+import com.hjw.appframe.reader.ui.common.BookShelfHelper;
 import com.hjw.commonui.BaseFragment;
-import com.hjw.commonui.view.xlistview.XListView;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,10 +19,10 @@ import butterknife.OnClick;
  * Created by Administrator on 2018/5/14 0014.
  */
 
-public class BookshelfFragment extends BaseFragment implements XListView.IXListViewListener{
+public class BookshelfFragment extends BaseFragment implements XRecyclerView.LoadingListener{
 
-    @BindView(R.id.mXListView) private XListView mXListView;
-
+    @BindView(R.id.xRecyclerView) XRecyclerView xRecyclerView;
+    BookShelfListAdapter bookShelfListAdapter;
     @Override
     protected int provideLayoutResId() {
         return R.layout.fragment_bookshelf;
@@ -28,28 +31,34 @@ public class BookshelfFragment extends BaseFragment implements XListView.IXListV
     @Override
     protected void initView(View rootView) {
         ButterKnife.bind(this,mRootView);
-        mXListView.setAdapter(new BookShelfListAdapter());
-        mXListView.setPullLoadEnable(false);
-        mXListView.setXListViewListener(this);
+        initXRecyclerView();
     }
 
     @Override
     protected void initListener() {
-
+        xRecyclerView.setLoadingListener(this);
     }
 
     @Override
     protected void initData(View rootView, Bundle savedInstanceState) {
-
+        BookShelfHelper bookShelfHelper = new BookShelfHelper();
+        bookShelfListAdapter.transferData(bookShelfHelper.getBookShelf(fragmentActivity));
     }
 
     @Override
     public void onRefresh() {
-
+        xRecyclerView.refreshComplete();
     }
 
     @Override
     public void onLoadMore() {
+        xRecyclerView.refreshComplete();
+    }
 
+    private void initXRecyclerView(){
+        GridLayoutManager layoutManager=new GridLayoutManager(fragmentActivity,2);
+        xRecyclerView.setLayoutManager(layoutManager);
+        bookShelfListAdapter =  new BookShelfListAdapter(fragmentActivity);
+        xRecyclerView.setAdapter(bookShelfListAdapter);
     }
 }

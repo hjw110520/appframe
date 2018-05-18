@@ -1,66 +1,57 @@
 package com.hjw.appframe.reader.ui.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.TextView;
 
+import com.hjw.appframe.R;
 import com.hjw.appframe.model.BookSearchInfo;
 
 import java.util.List;
 
 /**
- * Created by Administrator on 2018/5/14 0014.
+ * Created by Administrator on 2018/5/18 0018.
  */
 
-public class BookShelfListAdapter extends BaseAdapter{
-    private List<BookSearchInfo> entities;
+public class BookShelfListAdapter extends RecyclerView.Adapter<BookShelfListAdapter.BookShelfListViewHolder>{
+
     private Context mContext;
+    private List<BookSearchInfo> dataList;
     public BookShelfListAdapter(Context context){
         this.mContext = context;
     }
 
-    public void transferData(List<BookSearchInfo> entities) {
-        this.entities = entities;
+    public void transferData(List<BookSearchInfo> dataList){
+        this.dataList = dataList;
         notifyDataSetChanged();
     }
 
+
     @Override
-    public int getCount() {
-        return 0;
+    public int getItemCount() {
+        return dataList == null?0:dataList.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return null;
+    public BookShelfListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(mContext).inflate(R.layout.adapter_bookshelflist, parent, false);
+        return new BookShelfListViewHolder(view);
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public void onBindViewHolder(BookShelfListViewHolder holder, int position) {
+        BookSearchInfo bookSearchInfo = dataList.get(position);
+        holder.bookNameTV.setText(bookSearchInfo.title);
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.view_order_list_item, parent, false);
+    class BookShelfListViewHolder extends RecyclerView.ViewHolder{
+        private TextView bookNameTV;
+        public BookShelfListViewHolder(View itemView){
+            super(itemView);
+            bookNameTV = (TextView)itemView.findViewById(R.id.tv_book_name);
         }
-        findViews(position, convertView);
-        initData(position, convertView);
-        intListener(position);
-        return convertView;
-    }
-
-    private void findViews(int position, View convertView) {
-
-    }
-
-    protected void initData(int position, View convertView) {
-
-    }
-
-    private void intListener(final int  position) {
-
     }
 }

@@ -32,6 +32,5 @@ dependencies {
     //compile project(':base')
     releaseCompile project(path:':base', configuration:'release')
     debugCompile project(path:':base', configuration:'debug')
-
-    compile 'com.lcodecorex:tkrefreshlayout:1.0.7'
+    compile 'com.jcodecraeer:xrecyclerview:1.5.9'
 }

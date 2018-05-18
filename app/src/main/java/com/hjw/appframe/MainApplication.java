@@ -7,9 +7,6 @@ import com.hjw.appframe.api.ApiConfig;
 import com.hjw.base.BaseApplication;
 import com.hjw.network.NetInit;
 import com.hjw.network.api.OkHttpConfig;
-import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
-import com.lcodecore.tkrefreshlayout.footer.BallPulseView;
-import com.lcodecore.tkrefreshlayout.header.SinaRefreshView;
 
 public class MainApplication extends BaseApplication {
     private static boolean isLise = false;
@@ -22,8 +19,6 @@ public class MainApplication extends BaseApplication {
             ARouter.openDebug();
         }
 
-        TwinklingRefreshLayout.setDefaultHeader(SinaRefreshView.class.getName());
-        TwinklingRefreshLayout.setDefaultFooter(BallPulseView.class.getName());
 
         ARouter.init(BaseApplication.getAppContext());
         OkHttpConfig config = new OkHttpConfig.Builder()

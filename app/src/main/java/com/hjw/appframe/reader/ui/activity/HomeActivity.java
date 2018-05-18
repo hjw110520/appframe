@@ -26,8 +26,8 @@ public class HomeActivity extends BaseActivity{
     private Fragment currentFragment;
     private List<TextView> tabs;
 
-    @BindView(R.id.bookShelfTab) private TextView bookShelfTab;
-    @BindView(R.id.bookStoreTab) private TextView bookStoreTab;
+    @BindView(R.id.bookShelfTab)  TextView bookShelfTab;
+    @BindView(R.id.bookStoreTab)  TextView bookStoreTab;
 
     @Override
     protected int provideLayoutResId() {
@@ -50,12 +50,12 @@ public class HomeActivity extends BaseActivity{
     }
 
     @OnClick(R.id.bookShelfTab)
-    private void onBookShelfTabClick(){
+    protected void onBookShelfTabClick(){
         switchFragments(bookShelfFragment,0);
     }
 
     @OnClick(R.id.bookStoreTab)
-    private void onBookStoreTabClick(){
+    protected void onBookStoreTabClick(){
         switchFragments(bookShelfFragment,1);
     }
 

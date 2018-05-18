@@ -37,6 +37,7 @@ public class BookShelfHelper {
             try {
                 return JsonUtils.parseJson2List(currentShelfStr,BookSearchInfo.class);
             }catch (JSONException e){
+                e.printStackTrace();
                 ToastUtils.showToast("获取数据错误"+e.getLocalizedMessage());
             }
         }

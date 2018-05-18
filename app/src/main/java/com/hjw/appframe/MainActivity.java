@@ -11,6 +11,7 @@ import com.hjw.appframe.manager.ApiManager;
 import com.hjw.appframe.model.BookSearchInfo;
 import com.hjw.appframe.model.ChapterDetail;
 import com.hjw.appframe.reader.ui.common.BookShelfHelper;
+import com.hjw.base.utils.LogUtils;
 import com.hjw.commonui.BaseActivity;
 import com.hjw.network.callback.SimpleCallBack;
 
@@ -56,13 +57,15 @@ public class MainActivity extends BaseActivity {
             }
         });*/
 
-        apiManager.searchByKeyWord(new SimpleCallBack(){
+        /*apiManager.searchByKeyWord(new SimpleCallBack(){
             @Override
             public void onSuccess(Object result) {
                 List<BookSearchInfo> list = (List<BookSearchInfo>)result;
                 BookShelfHelper bookShelfHelper = new BookShelfHelper();
                 bookShelfHelper.addToBookShelf(MainActivity.this,list.get(0));
             }
-        });
+        });*/
+        BookShelfHelper bookShelfHelper = new BookShelfHelper();
+        LogUtils.debug(bookShelfHelper.getBookShelf(this).get(0).toString());
     }
 }

@@ -46,7 +46,7 @@ public class HomeActivity extends BaseActivity{
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-
+        switchFragments(bookShelfFragment,0);
     }
 
     @OnClick(R.id.bookShelfTab)

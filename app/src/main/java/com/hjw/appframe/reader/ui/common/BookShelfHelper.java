@@ -26,9 +26,23 @@ public class BookShelfHelper {
         if(null == bookSearchInfo){
             return;
         }
+        if(isAddedToBookShelf(context,bookSearchInfo)){
+            return;
+        }
         List<BookSearchInfo> currentShelf = getBookShelf(context);
         currentShelf.add(bookSearchInfo);
         PreferencesUtils.addConfigInfo(context,BOOK_SHELF_KEY,JsonUtils.parseObj2Json(currentShelf));
+    }
+
+    public boolean isAddedToBookShelf(Context context,BookSearchInfo bookSearchInfo){
+        List<BookSearchInfo> currentShelf = getBookShelf(context);
+
+        for(BookSearchInfo addedBook:currentShelf){
+            if(addedBook.bookIdentity.equals(bookSearchInfo.bookIdentity)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public List<BookSearchInfo> getBookShelf(Context context) {

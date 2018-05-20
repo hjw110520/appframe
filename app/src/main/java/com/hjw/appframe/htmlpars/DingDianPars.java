@@ -4,6 +4,7 @@ import com.hjw.appframe.model.BookIndex;
 import com.hjw.appframe.model.BookSearchInfo;
 import com.hjw.appframe.model.ChapterDetail;
 import com.hjw.base.utils.LogUtils;
+import com.hjw.base.utils.Md5Util;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -28,13 +29,14 @@ public class DingDianPars implements IHtmlPars{
                 BookSearchInfo book = new BookSearchInfo();
                 Elements bookElements = tr.select("td");
                 book.detailsUrl = bookElements.get(0).select("a").attr("href");
-                book.title = bookElements.get(0).select("a").text();
+                book.bookName = bookElements.get(0).select("a").text();
                 book.indexUrl = bookElements.get(1).select("a").attr("href");
                 book.lastUpdate = bookElements.get(1).select("a").text();
                 book.author = bookElements.get(2).text();
                 book.wordsNumber = bookElements.get(3).text();
                 book.lastUpdate = bookElements.get(4).text();
                 book.completeStatus = bookElements.get(5).text();
+                book.initBookIdentity();
                 LogUtils.debug(book.toString());
                 list.add(book);
             }

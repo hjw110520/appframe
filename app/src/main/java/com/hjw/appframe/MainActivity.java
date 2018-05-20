@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
                 bookShelfHelper.addToBookShelf(MainActivity.this,list.get(0));
             }
         });*/
-        BookShelfHelper bookShelfHelper = new BookShelfHelper();
-        LogUtils.debug(bookShelfHelper.getBookShelf(this).get(0).toString());
+        /*BookShelfHelper bookShelfHelper = new BookShelfHelper();
+        LogUtils.debug(bookShelfHelper.getBookShelf(this).get(0).toString());*/
     }
 }

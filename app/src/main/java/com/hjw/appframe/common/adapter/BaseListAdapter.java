@@ -1,4 +1,4 @@
-package com.hjw.appframe.reader.ui.adapter;
+package com.hjw.appframe.common.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -16,11 +16,11 @@ import java.util.List;
  * Created by Administrator on 2018/5/18 0018.
  */
 
-public class BookShelfListAdapter extends RecyclerView.Adapter<BookShelfListAdapter.BookShelfListViewHolder>{
+public class BaseListAdapter extends RecyclerView.Adapter<BaseListAdapter.BookShelfListViewHolder>{
 
     private Context mContext;
     private List<BookSearchInfo> dataList;
-    public BookShelfListAdapter(Context context){
+    public BaseListAdapter(Context context){
         this.mContext = context;
     }
 

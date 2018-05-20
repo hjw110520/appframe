@@ -56,7 +56,7 @@ public class HomeActivity extends BaseActivity{
 
     @OnClick(R.id.bookStoreTab)
     protected void onBookStoreTabClick(){
-        switchFragments(bookShelfFragment,1);
+        switchFragments(bookStoreFragment,1);
     }
 
     private void switchFragments(Fragment fragment, int postion) {

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,7 +20,7 @@ import com.hjw.base.LocalBroadcasts;
 /**
  * 基础Activity
  */
-public abstract class BaseActivity extends FragmentActivity{
+public abstract class BaseActivity extends AppCompatActivity {
 
     protected View mRootView;
 

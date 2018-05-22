@@ -38,7 +38,7 @@ public class BookShelfHelper {
         List<BookSearchInfo> currentShelf = getBookShelf(context);
 
         for(BookSearchInfo addedBook:currentShelf){
-            if(addedBook.bookIdentity.equals(bookSearchInfo.bookIdentity)){
+            if(null != addedBook.bookIdentity && addedBook.bookIdentity.equals(bookSearchInfo.bookIdentity)){
                 return true;
             }
         }
@@ -56,5 +56,9 @@ public class BookShelfHelper {
             }
         }
         return new ArrayList<BookSearchInfo>();
+    }
+
+    public void clearBookShelf(Context context){
+        PreferencesUtils.removeConfigInfo(context,BOOK_SHELF_KEY);
     }
 }

@@ -5,8 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
 import com.hjw.appframe.model.BookSearchInfo;
 
@@ -43,15 +46,25 @@ public class BookShelfListAdapter extends RecyclerView.Adapter<BookShelfListAdap
 
     @Override
     public void onBindViewHolder(BookShelfListViewHolder holder, int position) {
-        BookSearchInfo bookSearchInfo = dataList.get(position);
+        final BookSearchInfo bookSearchInfo = dataList.get(position);
         holder.bookNameTV.setText(bookSearchInfo.bookName);
+        holder.rootView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ARouter.getInstance().build(PathConfig.PATH_BOOK_INDEX)
+                        .withString("indexUrl",bookSearchInfo.indexUrl)
+                        .navigation();
+            }
+        });
     }
 
     class BookShelfListViewHolder extends RecyclerView.ViewHolder{
         private TextView bookNameTV;
+        private LinearLayout rootView;
         public BookShelfListViewHolder(View itemView){
             super(itemView);
-            bookNameTV = (TextView)itemView.findViewById(R.id.tv_book_name);
+            rootView = itemView.findViewById(R.id.rootView);
+            bookNameTV = itemView.findViewById(R.id.tv_book_name);
         }
     }
 }

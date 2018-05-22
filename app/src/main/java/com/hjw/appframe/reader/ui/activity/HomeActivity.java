@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
 import com.hjw.appframe.reader.ui.fragment.BookshelfFragment;
 import com.hjw.appframe.reader.ui.fragment.BookstoreFragment;
@@ -21,6 +23,7 @@ import butterknife.OnClick;
  * Created by Administrator on 2018/5/14 0014.
  */
 
+@Route(path = PathConfig.PATH_HOME)
 public class HomeActivity extends BaseActivity{
     private Fragment bookShelfFragment,bookStoreFragment;
     private Fragment currentFragment;

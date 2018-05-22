@@ -64,7 +64,14 @@ public class DingDianPars implements IHtmlPars{
         Elements indexes = htmlDoc.select("div.bdsub").select("h3").select("a");
         ChapterDetail chapterDetail = new ChapterDetail();
         chapterDetail.previousChapterUrl = indexes.get(0).attr("href");
+        if(null != chapterDetail.previousChapterUrl){
+            chapterDetail.previousChapterUrl = chapterDetail.previousChapterUrl.split("/")[4];
+        }
+        //   /html/0/493/223359.html
         chapterDetail.nextChapterUrl = indexes.get(2).attr("href");
+        if(null != chapterDetail.nextChapterUrl){
+            chapterDetail.nextChapterUrl = chapterDetail.nextChapterUrl.split("/")[4];
+        }
         chapterDetail.content = htmlDoc.select("#contents").toString();
         //chapterDetail.content = chapterDetail.content.replaceAll("\\<br\\>","\n");
         //chapterDetail.content = chapterDetail.content.replaceAll("&nbsp;","  ");

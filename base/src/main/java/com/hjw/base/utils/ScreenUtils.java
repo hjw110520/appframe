@@ -65,6 +65,11 @@ public class ScreenUtils {
         return (int) (spValue * fontScale + 0.5f);
     }
 
+    public static float px2sp(Context context, float pxValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return  (pxValue / fontScale + 0.5f);
+    }
+
     /**
      * 获取系统的 状态栏高度
      * @return

@@ -23,6 +23,7 @@ public class BookshelfFragment extends BaseFragment implements XRecyclerView.Loa
 
     @BindView(R.id.xRecyclerView) XRecyclerView xRecyclerView;
     BookShelfListAdapter bookShelfListAdapter;
+
     @Override
     protected int provideLayoutResId() {
         return R.layout.fragment_bookshelf;
@@ -53,6 +54,12 @@ public class BookshelfFragment extends BaseFragment implements XRecyclerView.Loa
     @Override
     public void onLoadMore() {
         xRecyclerView.refreshComplete();
+    }
+
+    @OnClick(R.id.btnClear)
+    public void onBtnClearClick(View view){
+        BookShelfHelper bookShelfHelper = new BookShelfHelper();
+        bookShelfHelper.clearBookShelf(fragmentActivity);
     }
 
     private void initXRecyclerView(){

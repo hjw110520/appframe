@@ -21,6 +21,9 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".reader.ui.activity.BookIndexActivity"></activity>
+        <activity android:name=".reader.ui.activity.BookChapterDetailActivity"></activity>
     </application>
 
 </manifest>

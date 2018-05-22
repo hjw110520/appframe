@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
 import com.hjw.appframe.R;
+import com.hjw.appframe.common.adapter.BaseListAdapter;
 import com.hjw.commonui.BaseFragment;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -13,7 +14,7 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 public abstract class BaseListFragment extends BaseFragment implements XRecyclerView.LoadingListener{
     protected XRecyclerView xRecyclerView;
-
+    protected BaseListAdapter listAdapter;
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         xRecyclerView = mRootView.findViewById(R.id.xRecyclerView);
@@ -26,9 +27,10 @@ public abstract class BaseListFragment extends BaseFragment implements XRecycler
     private void initXRecyclerView(){
         RecyclerView.LayoutManager layoutManager = initLayoutManager();
         xRecyclerView.setLayoutManager(layoutManager);
-        xRecyclerView.setAdapter(initAdapter());
+        listAdapter = initAdapter();
+        xRecyclerView.setAdapter(listAdapter);
     }
 
     public abstract RecyclerView.LayoutManager initLayoutManager();
-    public abstract RecyclerView.Adapter initAdapter();
+    public abstract BaseListAdapter initAdapter();
 }

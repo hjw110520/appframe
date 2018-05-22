@@ -6,5 +6,7 @@ package com.hjw.appframe;
 
 public class PathConfig {
     public static final String PATH_MAIN = "/app/com/hjw/appframe/MainActivity";
-    public static final String PATH_SWIPE_REFRESH_ACTIVITY = "/app/com/hjw/appframe/sample/RefreshActivity";
+    public static final String PATH_HOME = "/app/com/hjw/appframe/reader/ui/activity/HomeActivity";
+    public static final String PATH_BOOK_INDEX = "/app/com/hjw/appframe/reader/ui/activity/BookIndexActivity";
+    public static final String PATH_BOOK_CHAPTER_DETAIL = "/app/com/hjw/appframe/reader/ui/activity/BookChapterDetailActivity";
 }

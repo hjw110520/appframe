@@ -38,19 +38,24 @@ public class ApiManager {
         });
     }
 
-    public void getBookIndex(){
-        String indexUrl = "https://www.x23us.com/html/67/67759/";
+    /**
+     * @param indexUrl
+     *         @see BookSearchInfo#indexUrl
+     * @param callBack
+     */
+    public void getBookIndex(String indexUrl,final SimpleCallBack callBack){
+        //String indexUrl = indexUrl;//"https://www.x23us.com/html/67/67759/";
         RequestUtils.getInstance().get(indexUrl,null,String.class,new HtmlCallBack(){
             @Override
             public void onSuccess(Document htmlDoc) {
                 List<BookIndex> indexList = ParsHelper.getHtmlPars(ParsType.DingDian).parsBookIndex(htmlDoc);
-
+                callBack.onSuccess(indexList);
             }
         });
     }
 
-    public void getChapterDetail(final SimpleCallBack callBack){
-        String chapterUrl = "https://www.x23us.com/html/67/67759/29689526.html";
+    public void getChapterDetail(String chapterUrl,final SimpleCallBack callBack){
+        //String chapterUrl = "https://www.x23us.com/html/67/67759/29689526.html";
         RequestUtils.getInstance().get(chapterUrl,null,String.class,new HtmlCallBack(){
             @Override
             public void onSuccess(Document htmlDoc) {

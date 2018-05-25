@@ -1,5 +1,6 @@
 package com.hjw.appframe.reader.ui.activity;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -45,6 +46,12 @@ public class HomeActivity extends BaseActivity{
         tabs = new ArrayList<TextView>(2);
         tabs.add(bookShelfTab);
         tabs.add(bookStoreTab);
+        ActionBar actionBar = getActionBar();
+        /*if (actionBar != null) {
+            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM); //Enable自定义的View
+            actionBar.setCustomView(R.layout.actionbar_custom);//设置自定义的布局：actionbar_custom
+        }*/
+
     }
 
     @Override

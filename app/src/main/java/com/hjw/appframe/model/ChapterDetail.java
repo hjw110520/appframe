@@ -5,8 +5,10 @@ package com.hjw.appframe.model;
  */
 
 public class ChapterDetail {
-    public String nextChapterUrl;
-    public String previousChapterUrl;
+    public String indexUrl;//目录url
+    public String chapterUrl;//本章url
+    public String nextChapterUrl;//下一章url
+    public String previousChapterUrl;//上一章url
     public String content;
 
     @Override

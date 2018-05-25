@@ -25,7 +25,7 @@ public class MainApplication extends BaseApplication {
                 .retryTimes(10)
                 .readTime(10)
                 .writeTime(10)
-                .serverDomain(ApiConfig.Domain)
+                .serverDomain(ApiConfig.DingDianDomain)
                 .addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
                 .addHeader("Connection", "keep-alive")
                 .addHeader("Accept", "*/*")

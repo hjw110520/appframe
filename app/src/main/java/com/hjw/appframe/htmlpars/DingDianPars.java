@@ -1,5 +1,6 @@
 package com.hjw.appframe.htmlpars;
 
+import com.hjw.appframe.api.ApiConfig;
 import com.hjw.appframe.model.BookIndex;
 import com.hjw.appframe.model.BookSearchInfo;
 import com.hjw.appframe.model.ChapterDetail;
@@ -37,12 +38,21 @@ public class DingDianPars implements IHtmlPars{
                 book.lastUpdate = bookElements.get(4).text();
                 book.completeStatus = bookElements.get(5).text();
                 book.initBookIdentity();
+                book.bookCoverUrl = getBookCoverUrl(book);
                 LogUtils.debug(book.toString());
                 list.add(book);
             }
 
         }
         return list;
+    }
+
+    private String getBookCoverUrl(BookSearchInfo book){
+        String[] bookUrlString = book.indexUrl.split("/");
+        String id2 = bookUrlString[bookUrlString.length-1];
+        String id1 = bookUrlString[bookUrlString.length-2];
+        String bookCoverUrl = ApiConfig.API_COVER_IMG + id1+"/"+id2+"/"+id2+"s.jpg";
+        return bookCoverUrl;
     }
 
     public List<BookIndex> parsBookIndex(Document htmlDoc) {

@@ -1,7 +1,9 @@
 package com.hjw.appframe.reader.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -9,6 +11,8 @@ import android.widget.TextView;
 import com.hjw.appframe.R;
 import com.hjw.appframe.manager.ApiManager;
 import com.hjw.appframe.model.ChapterDetail;
+import com.hjw.appframe.reader.ui.common.CommonActions;
+import com.hjw.base.LocalBroadcasts;
 import com.hjw.base.utils.ScreenUtils;
 import com.hjw.commonui.BaseFragment;
 import com.hjw.network.callback.SimpleCallBack;
@@ -25,6 +29,7 @@ public class BookChapterDetailFragment extends BaseFragment{
 
     @BindView(R.id.tv_chapter_detail)TextView chapterDetailTV;
     @BindView(R.id.rv_bottomroot)View bottomRoot;
+    @BindView(R.id.rv_midroot)View midRoot;
     @BindView(R.id.mScrollView)ScrollView mScrollView;
     private ChapterDetail chapterDetail;
     @Override
@@ -50,45 +55,53 @@ public class BookChapterDetailFragment extends BaseFragment{
 
     @OnClick(R.id.tv_chapter_detail)
     public void onChapterDetailTVClick(View view){
-        toggleBottomRootVisible();
+        toggleBottomAndRootVisible();
     }
 
-    private void toggleBottomRootVisible(){
+    private void toggleBottomAndRootVisible(){
         if(bottomRoot.getVisibility() == View.VISIBLE){
             bottomRoot.setVisibility(View.GONE);
+            midRoot.setVisibility(View.GONE);
         }else {
             bottomRoot.setVisibility(View.VISIBLE);
+            midRoot.setVisibility(View.VISIBLE);
         }
     }
 
-    @OnClick(R.id.btn_nextChapter)
+    @OnClick(R.id.tv_nextChapter)
     public void onNextChapterClick(View view){
         refreshData(chapterDetail.nextChapterUrl);
-        toggleBottomRootVisible();
+        toggleBottomAndRootVisible();
     }
 
-    @OnClick(R.id.btn_lastChapter)
+    @OnClick(R.id.tv_lastChapter)
     public void onLastChapterClick(View view){
         refreshData(chapterDetail.previousChapterUrl);
-        toggleBottomRootVisible();
+        toggleBottomAndRootVisible();
     }
 
-    @OnClick(R.id.btn_addTextSize)
+    @OnClick(R.id.chapter_index)
+    public void onChapterIndexClick(View view){
+        LocalBroadcasts.sendLocalBroadcast(CommonActions.BOOK_INDEX_OPEN);
+        toggleBottomAndRootVisible();
+    }
+
+    //@OnClick(R.id.btn_addTextSize)
     public void onAddTextSizeClick(View view){
         addTextSize();
-        toggleBottomRootVisible();
+        toggleBottomAndRootVisible();
     }
 
-    @OnClick(R.id.btn_reduceTextSize)
+    //@OnClick(R.id.btn_reduceTextSize)
     public void onReduceTextSizeClick(View view){
         reduceTextSize();
-        toggleBottomRootVisible();
+        toggleBottomAndRootVisible();
     }
 
     private void refreshData(String chapterUrl){
         String indexUrl = getActivity().getIntent().getStringExtra("indexUrl");
         ApiManager apiManager = new ApiManager();
-        apiManager.getChapterDetail(indexUrl+chapterUrl,new SimpleCallBack(){
+        apiManager.getChapterDetail(indexUrl,chapterUrl,new SimpleCallBack(){
             @Override
             public void onSuccess(Object result) {
                 chapterDetail = (ChapterDetail)result;
@@ -108,5 +121,17 @@ public class BookChapterDetailFragment extends BaseFragment{
         float currentSize = chapterDetailTV.getTextSize();
         currentSize -= ScreenUtils.sp2px(fragmentActivity,8f);
         chapterDetailTV.setTextSize(ScreenUtils.px2sp(fragmentActivity,currentSize));
+    }
+
+    @Override
+    protected String[] provideBroadcastActions() {
+        return new String []{CommonActions.BOOK_INDEX_SELECTED};
+    }
+
+    @Override
+    protected void onReceiveBroadcast(String action, Intent intent) {
+        if(null != action && action.equals(CommonActions.BOOK_INDEX_SELECTED)){
+            refreshData(intent.getStringExtra("chapterUrl"));
+        }
     }
 }

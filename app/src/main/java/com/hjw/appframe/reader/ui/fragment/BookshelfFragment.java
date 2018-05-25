@@ -63,7 +63,7 @@ public class BookshelfFragment extends BaseFragment implements XRecyclerView.Loa
     }
 
     private void initXRecyclerView(){
-        GridLayoutManager layoutManager=new GridLayoutManager(fragmentActivity,2);
+        LinearLayoutManager layoutManager=new LinearLayoutManager(fragmentActivity);
         xRecyclerView.setLayoutManager(layoutManager);
         bookShelfListAdapter =  new BookShelfListAdapter(fragmentActivity);
         xRecyclerView.setAdapter(bookShelfListAdapter);

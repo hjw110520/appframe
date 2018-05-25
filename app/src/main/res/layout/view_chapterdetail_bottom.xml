@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rv_bottomroot"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_gravity="bottom"
+    android:layout_alignParentBottom="true"
+    android:background="@color/simple_bg_70"
+    >
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btn_nextChapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一章"
+
+            />
+        <Button
+            android:id="@+id/btn_lastChapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="上一章"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/btn_addTextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="加大字体"
+
+            />
+        <Button
+            android:id="@+id/btn_reduceTextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="减小字体"
+            />
+    </RelativeLayout>-->
+    <TextView
+        android:id="@+id/chapter_index"
+        style="@style/ChapterDetailBottomTab"
+        android:drawableTop="@mipmap/mulu"
+        android:text="目录" />
+    <TextView
+        style="@style/ChapterDetailBottomTab"
+        android:drawableTop="@mipmap/night"
+        android:text="夜间" />
+    <TextView
+        style="@style/ChapterDetailBottomTab"
+        android:drawableTop="@mipmap/download"
+        android:text="缓存" />
+    <TextView
+        style="@style/ChapterDetailBottomTab"
+        android:drawableTop="@mipmap/setting"
+        android:text="设置" />
+
+
+</LinearLayout>

@@ -14,7 +14,7 @@
         android:src="@mipmap/failed_refresh_icon" />
 
     <TextView
-        android:id="@+id/failed_text_reason"
+        android:id="@+id/failed_reason"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_refresh_icon"
@@ -24,7 +24,7 @@
         android:textColor="#666666"
         android:textSize="14dp" />
     <TextView
-        android:id="@+id/failed_text_reason_two"
+        android:id="@+id/operation_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/failed_text_reason"

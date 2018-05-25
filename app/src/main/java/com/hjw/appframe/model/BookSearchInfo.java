@@ -15,7 +15,7 @@ public class BookSearchInfo {
     public String completeStatus;//完成状态
     public String detailsUrl;//书籍详情页面url
     public String indexUrl;//目录页面url
-
+    public String bookCoverUrl;//封面url
     public void initBookIdentity(){
         StringBuilder sb = new StringBuilder();
         sb.append(this.bookName);
@@ -58,6 +58,9 @@ public class BookSearchInfo {
         sb.append("\n");
         sb.append("detailsUrl :");
         sb.append(detailsUrl);
+        sb.append("\n");
+        sb.append("bookCoverUrl :");
+        sb.append(bookCoverUrl);
         sb.append("\n");
         return sb.toString();
     }

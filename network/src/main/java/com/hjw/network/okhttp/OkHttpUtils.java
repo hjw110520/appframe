@@ -5,10 +5,12 @@ import com.hjw.network.okhttp.interceptor.HeaderInterceptor;
 import com.hjw.network.okhttp.interceptor.LoggingInterceptor;
 import com.hjw.network.okhttp.interceptor.RetryInterceptor;
 
+import java.io.File;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 
 public class OkHttpUtils {

@@ -26,4 +26,34 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="ChapterDetailBottomTab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/simple_bg_db</item>
+    </style>
+
+    <style name="ChapterDetailMidTab" parent="ChapterDetailBottomTab">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@color/simple_bg_70</item>
+    </style>
+
+    <style name="Line">
+        <item name="android:background">@color/simple_bg_2c</item>
+    </style>
+    <style name="Line.Horizontal" parent="Line">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="Line.Vertical" parent="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
 </resources>

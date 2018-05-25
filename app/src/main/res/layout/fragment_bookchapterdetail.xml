@@ -4,73 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ScrollView
-        android:id="@+id/mScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-            <TextView
-                android:id="@+id/tv_chapter_detail"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text=""
-                android:textSize="30sp"
-                android:clickable="true"
-                />
-        </LinearLayout>
-
-    </ScrollView>
-    <LinearLayout
-        android:id="@+id/rv_bottomroot"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <Button
-                android:id="@+id/btn_nextChapter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="下一章"
-
-                />
-            <Button
-                android:id="@+id/btn_lastChapter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="上一章"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <Button
-                android:id="@+id/btn_addTextSize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="加大字体"
-
-                />
-            <Button
-                android:id="@+id/btn_reduceTextSize"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="减小字体"
-                />
-        </RelativeLayout>
-    </LinearLayout>
+    <include layout="@layout/view_chapterdetail_content"/>
+    <include layout="@layout/view_chapterdetail_mid"/>
+    <include layout="@layout/view_chapterdetail_bottom"/>
 </RelativeLayout>

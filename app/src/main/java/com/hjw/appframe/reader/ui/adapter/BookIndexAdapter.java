@@ -1,17 +1,18 @@
 package com.hjw.appframe.reader.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
 import com.hjw.appframe.common.adapter.BaseListAdapter;
 import com.hjw.appframe.model.BookIndex;
+import com.hjw.appframe.reader.ui.common.CommonActions;
+import com.hjw.base.LocalBroadcasts;
 
 /**
  * Created by Administrator on 2018/5/18 0018.
@@ -31,10 +32,10 @@ public class BookIndexAdapter extends BaseListAdapter<BookIndexAdapter.BookIndex
         holder.rootView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ARouter.getInstance().build(PathConfig.PATH_BOOK_CHAPTER_DETAIL)
-                        .withString("chapterUrl",bookIndex.chapterUrl)
-                        .withString("indexUrl",indexUrl)
-                        .navigation();
+                Intent intent = new Intent(CommonActions.BOOK_INDEX_SELECTED);
+                intent.putExtra("chapterUrl",bookIndex.chapterUrl);
+                intent.putExtra("indexUrl",indexUrl);
+                LocalBroadcasts.sendLocalBroadcast(intent);
             }
         });
     }

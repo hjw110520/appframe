@@ -54,12 +54,14 @@ public class ApiManager {
         });
     }
 
-    public void getChapterDetail(String chapterUrl,final SimpleCallBack callBack){
+    public void getChapterDetail(final String indexUrl,final String chapterUrl,final SimpleCallBack callBack){
         //String chapterUrl = "https://www.x23us.com/html/67/67759/29689526.html";
-        RequestUtils.getInstance().get(chapterUrl,null,String.class,new HtmlCallBack(){
+        RequestUtils.getInstance().get(indexUrl+chapterUrl,null,String.class,new HtmlCallBack(){
             @Override
             public void onSuccess(Document htmlDoc) {
                 ChapterDetail chapterDetail = ParsHelper.getHtmlPars(ParsType.DingDian).parsChapterDetail(htmlDoc);
+                chapterDetail.indexUrl = indexUrl;
+                chapterDetail.chapterUrl = chapterUrl;
                 callBack.onSuccess(chapterDetail);
             }
         });

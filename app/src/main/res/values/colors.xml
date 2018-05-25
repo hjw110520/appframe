@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="simple_bg_e6">#e6e6e6</color>
+    <color name="simple_bg_db">#dbdbdb</color>
+    <color name="simple_bg_cd">#cdcdcd</color>
+    <color name="simple_bg_bf">#bfbfbf</color>
+    <color name="simple_bg_8a">#8a8a8a</color>
+    <color name="simple_bg_70">#707070</color>
+    <color name="simple_bg_2c">#2c2c2c</color>
 </resources>

@@ -14,6 +14,9 @@ import com.hjw.appframe.reader.ui.common.BookShelfHelper;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
@@ -57,12 +60,11 @@ public class BookStoreListAdapter extends RecyclerView.Adapter<BookStoreListAdap
 }
 
     class BookShelfListViewHolder extends RecyclerView.ViewHolder{
-        private TextView bookSearchInfo;
-        private Button collect;
+        @BindView(R.id.tv_book_search_info) TextView bookSearchInfo;
+        @BindView(R.id.btn_collect) Button collect;
         public BookShelfListViewHolder(View itemView){
             super(itemView);
-            bookSearchInfo = (TextView)itemView.findViewById(R.id.tv_book_search_info);
-            collect = (Button)itemView.findViewById(R.id.btn_collect);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

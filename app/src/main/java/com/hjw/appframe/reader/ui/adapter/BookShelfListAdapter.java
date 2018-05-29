@@ -17,6 +17,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
@@ -66,20 +69,15 @@ public class BookShelfListAdapter extends RecyclerView.Adapter<BookShelfListAdap
     }
 
     class BookShelfListViewHolder extends RecyclerView.ViewHolder{
-        private TextView bookNameTV;
-        private TextView bookAuthorTV;
-        private TextView bookCompleteStatusTV;
-        private TextView bookWordsNumberTV;
-        private ImageView bookImgIV;
-        private LinearLayout rootView;
+        @BindView(R.id.tv_book_name) TextView bookNameTV;
+        @BindView(R.id.tv_book_author) TextView bookAuthorTV;
+        @BindView(R.id.tv_book_completeStatus) TextView bookCompleteStatusTV;
+        @BindView(R.id.tv_book_wordsNumber) TextView bookWordsNumberTV;
+        @BindView(R.id.iv_book_img) ImageView bookImgIV;
+        @BindView(R.id.rootView) LinearLayout rootView;
         public BookShelfListViewHolder(View itemView){
             super(itemView);
-            rootView = itemView.findViewById(R.id.rootView);
-            bookNameTV = itemView.findViewById(R.id.tv_book_name);
-            bookAuthorTV = itemView.findViewById(R.id.tv_book_author);
-            bookCompleteStatusTV = itemView.findViewById(R.id.tv_book_completeStatus);
-            bookWordsNumberTV = itemView.findViewById(R.id.tv_book_wordsNumber);
-            bookImgIV = itemView.findViewById(R.id.iv_book_img);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

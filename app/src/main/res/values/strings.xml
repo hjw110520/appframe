@@ -1,9 +1,9 @@
 <resources>
-    <item name="xRecyclerView" type="id"/>
+    <item name="app_xRecyclerView" type="id"/>
 
     <string name="app_name">Appframe</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="app_title_activity_main">MainActivity</string>
     
-    <string name="main_tab_bookshelf">书架</string>
-    <string name="main_tab_bookstore">书城</string>
+    <string name="app_main_tab_bookshelf">书架</string>
+    <string name="app_main_tab_bookstore">书城</string>
 </resources>

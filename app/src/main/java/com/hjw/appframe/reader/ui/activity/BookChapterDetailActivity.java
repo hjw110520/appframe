@@ -25,7 +25,7 @@ public class BookChapterDetailActivity extends BaseActivity{
     @BindView(R.id.mDrawerLayout) DrawerLayout mDrawerLayout;
     @Override
     protected int provideLayoutResId() {
-        return R.layout.activity_book_chapter_detail;
+        return R.layout.app_activity_book_chapter_detail;
     }
 
     @Override

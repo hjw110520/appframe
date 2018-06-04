@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="纷纷往返"
-            android:textSize="@dimen/textsize_5"
+            android:textSize="@dimen/app_textsize_5"
             />
         <LinearLayout
             android:layout_width="match_parent"

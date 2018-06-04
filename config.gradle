@@ -1,0 +1,18 @@
+ext {
+    android = [
+        compileSdkVersion:26,
+        buildToolsVersion:"26.0.1",
+        applicationId:"com.hjw.appframe",
+        minSdkVersion:15,
+        targetSdkVersion:26,
+        versionCode:1 ,
+        versionName:"1.0"
+    ]
+
+    dependencies = [
+        supportV7: 'com.android.support:appcompat-v7:26.+',
+        recyclerviewV7:"com.android.support:recyclerview-v7:26.0.0-alpha1",
+        junit:"junit:junit:4.12",
+        constraintLayout:"com.android.support.constraint:constraint-layout:1.0.2"
+    ]
+}

@@ -9,11 +9,11 @@
     >
     <TextView
         android:id="@+id/tv_lastChapter"
-        style="@style/ChapterDetailMidTab"
+        style="@style/app_ChapterDetailMidTab"
         android:text="上一章" />
     <TextView
         android:id="@+id/tv_nextChapter"
-        style="@style/ChapterDetailMidTab"
+        style="@style/app_ChapterDetailMidTab"
         android:layout_alignParentRight="true"
         android:text="下一章" />
 </RelativeLayout>

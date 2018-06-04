@@ -45,7 +45,7 @@ public class BookShelfListAdapter extends RecyclerView.Adapter<BookShelfListAdap
 
     @Override
     public BookShelfListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.adapter_bookshelflist, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.app_adapter_bookshelflist, parent, false);
         return new BookShelfListViewHolder(view);
     }
 

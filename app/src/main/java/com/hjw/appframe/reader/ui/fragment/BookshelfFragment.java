@@ -1,7 +1,6 @@
 package com.hjw.appframe.reader.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
@@ -26,7 +25,7 @@ public class BookshelfFragment extends BaseFragment implements XRecyclerView.Loa
 
     @Override
     protected int provideLayoutResId() {
-        return R.layout.fragment_bookshelf;
+        return R.layout.app_fragment_bookshelf;
     }
 
     @Override

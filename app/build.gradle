@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
-
+def config_info = rootProject.ext.android
+def lib_info = rootProject.ext.dependencies
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion config_info.compileSdkVersion
+    buildToolsVersion config_info.buildToolsVersion
     defaultConfig {
-        applicationId "com.hjw.appframe"
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 2
-        versionName "2.0"
+        applicationId config_info.applicationId
+        minSdkVersion config_info.minSdkVersion
+        targetSdkVersion config_info.targetSdkVersion
+        versionCode config_info.versionCode
+        versionName config_info.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //arouter init
         javaCompileOptions {
@@ -25,6 +26,7 @@ android {
         debug{
         }
     }
+    resourcePrefix "app_"
 }
 
 dependencies {
@@ -32,10 +34,10 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:26.+'
-    testCompile 'junit:junit:4.12'
+    compile lib_info.supportV7
+    compile lib_info.recyclerviewV7
+    compile lib_info.junit
+    compile lib_info.constraintLayout
 
     releaseCompile project(path:':base', configuration:'release')
     debugCompile project(path:':base', configuration:'debug')

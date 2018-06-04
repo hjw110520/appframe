@@ -35,7 +35,7 @@ public class HomeActivity extends BaseActivity{
 
     @Override
     protected int provideLayoutResId() {
-        return R.layout.activity_home;
+        return R.layout.app_activity_home;
     }
 
     @Override

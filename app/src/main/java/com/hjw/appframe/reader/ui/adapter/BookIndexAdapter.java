@@ -45,7 +45,7 @@ public class BookIndexAdapter extends BaseListAdapter<BookIndexAdapter.BookIndex
 
     @Override
     public BookIndexViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.adapter_bookindex, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.app_adapter_bookindex, parent, false);
         return new BookIndexAdapter.BookIndexViewHolder(view);
     }
 

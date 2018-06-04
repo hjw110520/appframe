@@ -3,7 +3,6 @@ package com.hjw.appframe.reader.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -34,7 +33,7 @@ public class BookChapterDetailFragment extends BaseFragment{
     private ChapterDetail chapterDetail;
     @Override
     protected int provideLayoutResId() {
-        return R.layout.fragment_bookchapterdetail;
+        return R.layout.app_fragment_bookchapterdetail;
     }
 
     @Override

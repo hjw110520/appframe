@@ -3,7 +3,6 @@ package com.hjw.appframe.reader.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjw.appframe.PathConfig;
@@ -21,7 +20,7 @@ public class BookIndexActivity extends BaseActivity{
 
     @Override
     protected int provideLayoutResId() {
-        return R.layout.activity_base_fragment_container;
+        return R.layout.app_activity_base_fragment_container;
     }
 
     @Override

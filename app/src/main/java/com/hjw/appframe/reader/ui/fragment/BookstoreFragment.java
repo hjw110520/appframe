@@ -1,7 +1,6 @@
 package com.hjw.appframe.reader.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.SearchView;
@@ -30,7 +29,7 @@ public class BookstoreFragment extends BaseFragment{
     BookStoreListAdapter bookStoreListAdapter;
     @Override
     protected int provideLayoutResId() {
-        return R.layout.fragment_bookstore;
+        return R.layout.app_fragment_bookstore;
     }
 
     @Override

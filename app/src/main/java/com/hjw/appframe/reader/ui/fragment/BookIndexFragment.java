@@ -9,7 +9,6 @@ import com.hjw.appframe.R;
 import com.hjw.appframe.common.adapter.BaseListAdapter;
 import com.hjw.appframe.common.ui.BaseListFragment;
 import com.hjw.appframe.manager.ApiManager;
-import com.hjw.appframe.model.BookIndex;
 import com.hjw.appframe.reader.ui.adapter.BookIndexAdapter;
 import com.hjw.network.callback.SimpleCallBack;
 
@@ -24,7 +23,7 @@ import butterknife.ButterKnife;
 public class BookIndexFragment extends BaseListFragment{
     @Override
     protected int provideLayoutResId() {
-        return R.layout.fragment_bookindex;
+        return R.layout.app_fragment_bookindex;
     }
 
     @Override

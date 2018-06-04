@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/view_chapterdetail_content"/>
-    <include layout="@layout/view_chapterdetail_mid"/>
-    <include layout="@layout/view_chapterdetail_bottom"/>
+    <include layout="@layout/app_view_chapterdetail_content"/>
+    <include layout="@layout/app_view_chapterdetail_mid"/>
+    <include layout="@layout/app_view_chapterdetail_bottom"/>
 </RelativeLayout>

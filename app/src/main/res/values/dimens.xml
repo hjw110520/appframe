@@ -1,12 +1,12 @@
 <resources>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_fab_margin">16dp</dimen>
 
-    <dimen name="sm_50">50dp</dimen>
+    <dimen name="app_sm_50">50dp</dimen>
 
 
-    <dimen name="textsize_1">12sp</dimen>
-    <dimen name="textsize_2">14sp</dimen>
-    <dimen name="textsize_3">16sp</dimen>
-    <dimen name="textsize_4">18sp</dimen>
-    <dimen name="textsize_5">24sp</dimen>
+    <dimen name="app_textsize_1">12sp</dimen>
+    <dimen name="app_textsize_2">14sp</dimen>
+    <dimen name="app_textsize_3">16sp</dimen>
+    <dimen name="app_textsize_4">18sp</dimen>
+    <dimen name="app_textsize_5">24sp</dimen>
 </resources>

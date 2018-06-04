@@ -5,9 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/appframe.iml" filepath="$PROJECT_DIR$/appframe.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookshelf/bookshelf.iml" filepath="$PROJECT_DIR$/bookshelf/bookshelf.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonui/commonui.iml" filepath="$PROJECT_DIR$/commonui/commonui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jsbridgeannotaton/jsbridgeannotaton.iml" filepath="$PROJECT_DIR$/jsbridgeannotaton/jsbridgeannotaton.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jsbridgecore/jsbridgecore.iml" filepath="$PROJECT_DIR$/jsbridgecore/jsbridgecore.iml" />
       <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" />
     </modules>
   </component>

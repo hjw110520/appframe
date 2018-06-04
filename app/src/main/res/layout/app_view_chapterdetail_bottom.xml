@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:layout_gravity="bottom"
     android:layout_alignParentBottom="true"
-    android:background="@color/simple_bg_70"
+    android:background="@color/app_simple_bg_70"
     >
     <!--<RelativeLayout
         android:layout_width="match_parent"
@@ -50,19 +50,19 @@
     </RelativeLayout>-->
     <TextView
         android:id="@+id/chapter_index"
-        style="@style/ChapterDetailBottomTab"
+        style="@style/app_ChapterDetailBottomTab"
         android:drawableTop="@mipmap/mulu"
         android:text="目录" />
     <TextView
-        style="@style/ChapterDetailBottomTab"
+        style="@style/app_ChapterDetailBottomTab"
         android:drawableTop="@mipmap/night"
         android:text="夜间" />
     <TextView
-        style="@style/ChapterDetailBottomTab"
+        style="@style/app_ChapterDetailBottomTab"
         android:drawableTop="@mipmap/download"
         android:text="缓存" />
     <TextView
-        style="@style/ChapterDetailBottomTab"
+        style="@style/app_ChapterDetailBottomTab"
         android:drawableTop="@mipmap/setting"
         android:text="设置" />
 

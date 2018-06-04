@@ -3,7 +3,7 @@
     package="com.hjw.appframe">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:name=".MainApplication"
+        android:name="com.hjw.base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +13,7 @@
         <!--"-->
         <activity
             android:name=".reader.ui.activity.HomeActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/app_title_activity_main"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +21,6 @@
             </intent-filter>
 
         </activity>
-
-        <activity android:name=".reader.ui.activity.BookIndexActivity"></activity>
-        <activity android:name=".reader.ui.activity.BookChapterDetailActivity"></activity>
     </application>
 
 </manifest>

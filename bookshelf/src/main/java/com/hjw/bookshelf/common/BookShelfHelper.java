@@ -1,13 +1,12 @@
-package com.hjw.appframe.reader.ui.common;
+package com.hjw.bookshelf.common;
 
 import android.content.Context;
 
-import com.google.gson.JsonParseException;
-import com.hjw.appframe.model.BookSearchInfo;
 import com.hjw.base.utils.JsonUtils;
 import com.hjw.base.utils.PreferencesUtils;
 import com.hjw.base.utils.StringUtils;
 import com.hjw.base.utils.ToastUtils;
+import com.hjw.bookshelf.model.BookSearchInfo;
 
 import org.json.JSONException;
 

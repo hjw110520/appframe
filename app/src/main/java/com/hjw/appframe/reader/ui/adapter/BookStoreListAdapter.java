@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.hjw.appframe.R;
 import com.hjw.appframe.model.BookSearchInfo;
-import com.hjw.appframe.reader.ui.common.BookShelfHelper;
 
 import java.util.List;
 
@@ -53,8 +52,8 @@ public class BookStoreListAdapter extends RecyclerView.Adapter<BookStoreListAdap
         holder.collect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BookShelfHelper bookShelfHelper = new BookShelfHelper();
-                bookShelfHelper.addToBookShelf(mContext,bookSearchInfo);
+                /*BookShelfHelper bookShelfHelper = new BookShelfHelper();
+                bookShelfHelper.addToBookShelf(mContext,bookSearchInfo);*/
             }
         });
 }

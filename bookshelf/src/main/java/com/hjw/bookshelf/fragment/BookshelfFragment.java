@@ -1,12 +1,14 @@
-package com.hjw.appframe.reader.ui.fragment;
+package com.hjw.bookshelf.fragment;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
-import com.hjw.appframe.R;
-import com.hjw.appframe.reader.ui.adapter.BookShelfListAdapter;
-import com.hjw.appframe.reader.ui.common.BookShelfHelper;
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.hjw.bookshelf.PathConfig;
+import com.hjw.bookshelf.R;
+import com.hjw.bookshelf.adapter.BookShelfListAdapter;
+import com.hjw.bookshelf.common.BookShelfHelper;
 import com.hjw.commonui.BaseFragment;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -20,12 +22,12 @@ import butterknife.OnClick;
 
 public class BookshelfFragment extends BaseFragment implements XRecyclerView.LoadingListener{
 
-    @BindView(R.id.xRecyclerView) XRecyclerView xRecyclerView;
+    @BindView(R.id.xRecyclerView)XRecyclerView xRecyclerView;
     BookShelfListAdapter bookShelfListAdapter;
 
     @Override
     protected int provideLayoutResId() {
-        return R.layout.app_fragment_bookshelf;
+        return R.layout.bookshelf_fragment_bookshelf;
     }
 
     @Override

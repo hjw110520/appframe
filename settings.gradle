@@ -1,1 +1,1 @@
-include ':app', ':base', ':commonui', ':network',':bookshelf'
+include ':app', ':base', ':commonui', ':network',':bookshelf', ':bookstore'

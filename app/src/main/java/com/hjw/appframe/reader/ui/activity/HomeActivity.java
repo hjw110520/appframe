@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
-import com.hjw.appframe.reader.ui.fragment.BookshelfFragment;
 import com.hjw.appframe.reader.ui.fragment.BookstoreFragment;
 import com.hjw.commonui.BaseActivity;
 
@@ -41,7 +41,7 @@ public class HomeActivity extends BaseActivity{
     @Override
     protected void initView(Bundle savedInstanceState) {
         ButterKnife.bind(this,mRootView);
-        bookShelfFragment = new BookshelfFragment();
+        bookShelfFragment =  (Fragment) ARouter.getInstance().build(PathConfig.FRAGMENT_BOOK_SHELF).navigation();
         bookStoreFragment = new BookstoreFragment();
         tabs = new ArrayList<TextView>(2);
         tabs.add(bookShelfTab);
@@ -96,7 +96,7 @@ public class HomeActivity extends BaseActivity{
                 bookStoreFragment = new BookstoreFragment();
                 return bookStoreFragment;
             default:
-                bookShelfFragment = new BookshelfFragment();
+                bookShelfFragment = (Fragment) ARouter.getInstance().build(PathConfig.FRAGMENT_BOOK_SHELF).navigation();
                 return bookShelfFragment;
         }
     }

@@ -17,7 +17,12 @@ public class BaseApplication extends Application {
 	
 	private static Handler sHandler;
 	private static Application sApplication;
-	
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+	}
+
 	/**
 	 * @return 整个APP可以使用的Handler（为主线程）
 	 */

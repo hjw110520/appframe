@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjw.appframe.R;
 import com.hjw.appframe.manager.ApiManager;
 import com.hjw.appframe.model.ChapterDetail;

@@ -10,7 +10,6 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -30,7 +29,6 @@ dependencies {
     compile lib_info.supportV7
     compile lib_info.recyclerviewV7
     compile lib_info.junit
-    //compile project(':base')
     releaseCompile project(path:':base', configuration:'release')
     debugCompile project(path:':base', configuration:'debug')
     compile 'com.jcodecraeer:xrecyclerview:1.5.9'

@@ -18,8 +18,6 @@ public class MainApplication extends BaseApplication {
             ARouter.openLog();
             ARouter.openDebug();
         }
-
-
         ARouter.init(BaseApplication.getAppContext());
         OkHttpConfig config = new OkHttpConfig.Builder()
                 .retryTimes(10)

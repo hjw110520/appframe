@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="bookshelf_fab_margin">16dp</dimen>
+
+    <dimen name="bookshelf_sm_50">50dp</dimen>
+
+
+    <dimen name="bookshelf_textsize_1">12sp</dimen>
+    <dimen name="bookshelf_textsize_2">14sp</dimen>
+    <dimen name="bookshelf_textsize_3">16sp</dimen>
+    <dimen name="bookshelf_textsize_4">18sp</dimen>
+    <dimen name="bookshelf_textsize_5">24sp</dimen>
+</resources>

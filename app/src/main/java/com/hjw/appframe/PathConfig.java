@@ -9,4 +9,6 @@ public class PathConfig {
     public static final String PATH_HOME = "/app/com/hjw/appframe/reader/ui/activity/HomeActivity";
     public static final String PATH_BOOK_INDEX = "/app/com/hjw/appframe/reader/ui/activity/BookIndexActivity";
     public static final String PATH_BOOK_CHAPTER_DETAIL = "/app/com/hjw/appframe/reader/ui/activity/BookChapterDetailActivity";
+
+    public static final String FRAGMENT_BOOK_SHELF = "/bookshelf/fragment/BookshelfFragment";
 }

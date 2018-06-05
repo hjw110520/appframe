@@ -1,4 +1,4 @@
-package com.hjw.appframe.reader.ui.adapter;
+package com.hjw.bookshelf.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.hjw.appframe.PathConfig;
-import com.hjw.appframe.R;
-import com.hjw.appframe.model.BookSearchInfo;
+import com.hjw.bookshelf.PathConfig;
+import com.hjw.bookshelf.R;
+import com.hjw.bookshelf.model.BookSearchInfo;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -45,7 +45,7 @@ public class BookShelfListAdapter extends RecyclerView.Adapter<BookShelfListAdap
 
     @Override
     public BookShelfListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.app_adapter_bookshelflist, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.bookshelf_adapter_bookshelflist, parent, false);
         return new BookShelfListViewHolder(view);
     }
 

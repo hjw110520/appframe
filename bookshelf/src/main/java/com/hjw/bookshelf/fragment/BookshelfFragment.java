@@ -19,7 +19,7 @@ import butterknife.OnClick;
 /**
  * Created by Administrator on 2018/5/14 0014.
  */
-
+@Route(path = PathConfig.FRAGMENT_BOOK_SHELF)
 public class BookshelfFragment extends BaseFragment implements XRecyclerView.LoadingListener{
 
     @BindView(R.id.xRecyclerView)XRecyclerView xRecyclerView;

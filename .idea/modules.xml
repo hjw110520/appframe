@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/appframe.iml" filepath="$PROJECT_DIR$/appframe.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bookbase/bookbase.iml" filepath="$PROJECT_DIR$/bookbase/bookbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/bookshelf/bookshelf.iml" filepath="$PROJECT_DIR$/bookshelf/bookshelf.iml" />
       <module fileurl="file://$PROJECT_DIR$/bookstore/bookstore.iml" filepath="$PROJECT_DIR$/bookstore/bookstore.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonui/commonui.iml" filepath="$PROJECT_DIR$/commonui/commonui.iml" />

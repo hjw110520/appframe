@@ -11,12 +11,7 @@ android {
         versionCode config_info.versionCode
         versionName config_info.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //arouter init
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
-            }
-        }
+
     }
     buildTypes {
         release {
@@ -48,9 +43,5 @@ dependencies {
     releaseCompile project(path:':commonui', configuration:'release')
     debugCompile project(path:':commonui', configuration:'debug')
 
-    compile 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    //arouter init
-    compile 'com.alibaba:arouter-api:1.2.2'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.0.3'
+
 }

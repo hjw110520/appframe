@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 /**
  * 应用的基类，封装一些应用全局调用的对象及API（to be continued），
  * 
@@ -21,6 +23,11 @@ public class BaseApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		if (BuildConfig.DEBUG) {
+			ARouter.openLog();
+			ARouter.openDebug();
+		}
+		ARouter.init(BaseApplication.getAppContext());
 	}
 
 	/**

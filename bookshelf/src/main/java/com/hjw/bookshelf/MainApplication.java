@@ -13,11 +13,6 @@ public class MainApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (BuildConfig.DEBUG) {
-            ARouter.openLog();
-            ARouter.openDebug();
-        }
-        ARouter.init(BaseApplication.getAppContext());
         OkHttpConfig config = new OkHttpConfig.Builder()
                 .retryTimes(10)
                 .readTime(10)

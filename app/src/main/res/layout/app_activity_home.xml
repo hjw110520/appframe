@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".reader.ui.activity.HomeActivity">
 
-    <LinearLayout
-        android:id="@+id/home_page_main_tab"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/app_sm_50"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true">
-        <View style="@style/app_Line.Vertical"/>
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
+            android:id="@+id/home_page_main_tab"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:layout_height="@dimen/app_sm_50"
+            android:orientation="vertical"
             android:layout_alignParentBottom="true">
-            <TextView
-                android:id="@+id/bookShelfTab"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                style="@style/app_HomeTab"
-                android:text="@string/app_main_tab_bookshelf"
-                />
-            <View style="@style/app_Line.Horizontal"/>
 
-            <TextView
-                android:id="@+id/bookStoreTab"
-                style="@style/app_HomeTab"
-                android:layout_width="wrap_content"
+            <View style="@style/app_Line.Vertical"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/app_main_tab_bookstore" />
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+                <TextView
+                    android:id="@+id/bookShelfTab"
+                    style="@style/app_HomeTab"
+                    android:text="@string/app_main_tab_bookshelf"
+                    android:onClick="@{() ->  onBookShelfTabClick(this)}"
+                    />
+                <View style="@style/app_Line.Horizontal"/>
+
+                <TextView
+                    android:id="@+id/bookStoreTab"
+                    style="@style/app_HomeTab"
+                    android:onClick="@{() ->  onBookStoreTabClick(this)}"
+                    android:text="@string/app_main_tab_bookstore" />
+            </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
-    <RelativeLayout
-        android:id="@+id/home_page_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/home_page_main_tab">
+        <RelativeLayout
+            android:id="@+id/home_page_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/home_page_main_tab">
+        </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
+</layout>

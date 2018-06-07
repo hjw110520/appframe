@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 def config_info = rootProject.ext.android
 def lib_info = rootProject.ext.dependencies
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion config_info.compileSdkVersion
+    buildToolsVersion config_info.buildToolsVersion
     publishNonDefault true
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion config_info.minSdkVersion
+        targetSdkVersion config_info.targetSdkVersion
+        versionCode config_info.versionCode
+        versionName config_info.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
@@ -24,6 +24,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dataBinding {
+        enabled = true
     }
 }
 

@@ -6,7 +6,7 @@ import com.hjw.base.utils.JsonUtils;
 import com.hjw.base.utils.PreferencesUtils;
 import com.hjw.base.utils.StringUtils;
 import com.hjw.base.utils.ToastUtils;
-import com.hjw.bookshelf.model.BookSearchInfo;
+import com.hjw.bookbase.model.BookSearchInfo;
 
 import org.json.JSONException;
 

@@ -10,10 +10,10 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjw.appframe.R;
 import com.hjw.appframe.manager.ApiManager;
-import com.hjw.appframe.model.ChapterDetail;
 import com.hjw.appframe.reader.ui.common.CommonActions;
 import com.hjw.base.LocalBroadcasts;
 import com.hjw.base.utils.ScreenUtils;
+import com.hjw.bookbase.model.ChapterDetail;
 import com.hjw.commonui.BaseFragment;
 import com.hjw.network.callback.SimpleCallBack;
 

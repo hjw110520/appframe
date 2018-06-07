@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-
 import com.hjw.base.LocalBroadcasts;
 
 
@@ -21,7 +20,6 @@ import com.hjw.base.LocalBroadcasts;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected View mRootView;
-
     public static boolean isbackgroud = false;
 
     @Override

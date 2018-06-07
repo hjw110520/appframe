@@ -1,11 +1,11 @@
 package com.hjw.appframe.htmlpars;
 
 import com.hjw.appframe.api.ApiConfig;
-import com.hjw.appframe.model.BookIndex;
-import com.hjw.appframe.model.BookSearchInfo;
-import com.hjw.appframe.model.ChapterDetail;
 import com.hjw.base.utils.LogUtils;
 import com.hjw.base.utils.Md5Util;
+import com.hjw.bookbase.model.BookIndex;
+import com.hjw.bookbase.model.BookSearchInfo;
+import com.hjw.bookbase.model.ChapterDetail;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

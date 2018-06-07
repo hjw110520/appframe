@@ -13,7 +13,9 @@ android {
     compileSdkVersion config_info.compileSdkVersion
     buildToolsVersion config_info.buildToolsVersion
     defaultConfig {
-        applicationId "com.hjw.bookshelf"
+        if(isDebug.toBoolean()){
+            applicationId "com.hjw.bookshelf"
+        }
         minSdkVersion config_info.minSdkVersion
         targetSdkVersion config_info.targetSdkVersion
         versionCode config_info.versionCode
@@ -27,6 +29,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dataBinding {
+        enabled = true
     }
 
     sourceSets {
@@ -52,15 +57,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    releaseCompile project(path:':base', configuration:'release')
-    debugCompile project(path:':base', configuration:'debug')
-
-    releaseCompile project(path:':network', configuration:'release')
-    debugCompile project(path:':network', configuration:'debug')
-
-    releaseCompile project(path:':commonui', configuration:'release')
-    debugCompile project(path:':commonui', configuration:'debug')
-
     releaseCompile project(path:':bookbase', configuration:'release')
     debugCompile project(path:':bookbase', configuration:'debug')
 }

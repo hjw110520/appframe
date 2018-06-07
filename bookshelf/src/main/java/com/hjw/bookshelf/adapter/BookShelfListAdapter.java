@@ -10,9 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.hjw.bookbase.model.BookSearchInfo;
 import com.hjw.bookshelf.PathConfig;
 import com.hjw.bookshelf.R;
-import com.hjw.bookshelf.model.BookSearchInfo;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

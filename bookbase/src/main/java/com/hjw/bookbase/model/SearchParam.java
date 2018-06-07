@@ -1,4 +1,4 @@
-package com.hjw.appframe.model;
+package com.hjw.bookbase.model;
 
 import com.hjw.network.api.BaseRequestParam;
 

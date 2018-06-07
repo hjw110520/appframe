@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.hjw.appframe.R;
 import com.hjw.appframe.common.adapter.BaseListAdapter;
-import com.hjw.appframe.model.BookIndex;
 import com.hjw.appframe.reader.ui.common.CommonActions;
 import com.hjw.base.LocalBroadcasts;
+import com.hjw.bookbase.model.BookIndex;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

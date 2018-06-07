@@ -1,22 +1,17 @@
 package com.hjw.appframe.manager;
 
 import com.hjw.appframe.api.ApiConfig;
-import com.hjw.appframe.htmlpars.DingDianPars;
 import com.hjw.appframe.htmlpars.ParsHelper;
 import com.hjw.appframe.htmlpars.ParsType;
-import com.hjw.appframe.model.BookIndex;
-import com.hjw.appframe.model.BookInfo;
-import com.hjw.appframe.model.BookSearchInfo;
-import com.hjw.appframe.model.ChapterDetail;
-import com.hjw.appframe.model.SearchParam;
-import com.hjw.base.utils.LogUtils;
+import com.hjw.bookbase.model.BookIndex;
+import com.hjw.bookbase.model.BookSearchInfo;
+import com.hjw.bookbase.model.ChapterDetail;
+import com.hjw.bookbase.model.SearchParam;
 import com.hjw.network.api.RequestUtils;
 import com.hjw.network.callback.HtmlCallBack;
 import com.hjw.network.callback.SimpleCallBack;
 
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.util.List;
 

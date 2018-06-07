@@ -1,4 +1,4 @@
-package com.hjw.appframe.model;
+package com.hjw.bookbase.model;
 
 /**
  * Created by Administrator on 2018/5/11 0011.

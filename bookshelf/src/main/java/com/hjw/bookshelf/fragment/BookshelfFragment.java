@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.hjw.bookshelf.PathConfig;
+import com.hjw.bookbase.PathConfig;
 import com.hjw.bookshelf.R;
 import com.hjw.bookshelf.adapter.BookShelfListAdapter;
 import com.hjw.bookshelf.common.BookShelfHelper;

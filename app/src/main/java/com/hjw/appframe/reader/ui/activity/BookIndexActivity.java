@@ -5,10 +5,10 @@ import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
 import com.hjw.appframe.reader.ui.common.CommonActions;
 import com.hjw.appframe.reader.ui.fragment.BookIndexFragment;
+import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseActivity;
 
 /**

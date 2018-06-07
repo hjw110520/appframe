@@ -1,6 +1,8 @@
 package com.hjw.appframe.reader.ui.activity;
 
 import android.app.ActionBar;
+import android.databinding.BindingAdapter;
+import android.databinding.DataBindingComponent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,9 +10,9 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
 import com.hjw.appframe.reader.ui.fragment.BookstoreFragment;
+import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseActivity;
 
 import java.util.ArrayList;
@@ -30,9 +32,8 @@ public class HomeActivity extends BaseActivity{
     private Fragment currentFragment;
     private List<TextView> tabs;
 
-    @BindView(R.id.bookShelfTab)  TextView bookShelfTab;
-    @BindView(R.id.bookStoreTab)  TextView bookStoreTab;
-
+    TextView bookShelfTab;
+    TextView bookStoreTab;
     @Override
     protected int provideLayoutResId() {
         return R.layout.app_activity_home;
@@ -40,7 +41,6 @@ public class HomeActivity extends BaseActivity{
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        ButterKnife.bind(this,mRootView);
         bookShelfFragment =  (Fragment) ARouter.getInstance().build(PathConfig.FRAGMENT_BOOK_SHELF).navigation();
         bookStoreFragment = new BookstoreFragment();
         tabs = new ArrayList<TextView>(2);
@@ -59,13 +59,13 @@ public class HomeActivity extends BaseActivity{
         switchFragments(bookShelfFragment,0);
     }
 
-    @OnClick(R.id.bookShelfTab)
-    protected void onBookShelfTabClick(){
+    //@OnClick(R.id.bookShelfTab)
+    public void onBookShelfTabClick(){
         switchFragments(bookShelfFragment,0);
     }
 
-    @OnClick(R.id.bookStoreTab)
-    protected void onBookStoreTabClick(){
+    //@OnClick(R.id.bookStoreTab)
+    public void onBookStoreTabClick(){
         switchFragments(bookStoreFragment,1);
     }
 

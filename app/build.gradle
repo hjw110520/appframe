@@ -21,6 +21,11 @@ android {
         debug{
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     resourcePrefix "app_"
 }
 
@@ -34,14 +39,7 @@ dependencies {
     compile lib_info.junit
     compile lib_info.constraintLayout
 
-    releaseCompile project(path:':base', configuration:'release')
-    debugCompile project(path:':base', configuration:'debug')
-
-    releaseCompile project(path:':network', configuration:'release')
-    debugCompile project(path:':network', configuration:'debug')
-
-    releaseCompile project(path:':commonui', configuration:'release')
-    debugCompile project(path:':commonui', configuration:'debug')
-
+    releaseCompile project(path:':bookbase', configuration:'release')
+    debugCompile project(path:':bookbase', configuration:'debug')
 
 }

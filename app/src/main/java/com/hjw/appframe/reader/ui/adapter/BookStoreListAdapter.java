@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.hjw.appframe.R;
-import com.hjw.appframe.model.BookSearchInfo;
+import com.hjw.bookbase.model.BookSearchInfo;
 
 import java.util.List;
 

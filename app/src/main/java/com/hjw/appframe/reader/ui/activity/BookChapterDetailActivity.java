@@ -6,11 +6,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.hjw.appframe.PathConfig;
 import com.hjw.appframe.R;
 import com.hjw.appframe.reader.ui.common.CommonActions;
 import com.hjw.appframe.reader.ui.fragment.BookChapterDetailFragment;
 import com.hjw.appframe.reader.ui.fragment.BookIndexFragment;
+import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseActivity;
 
 import butterknife.BindView;

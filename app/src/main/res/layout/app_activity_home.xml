@@ -2,6 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".reader.ui.activity.HomeActivity">
+    <data>
+        <variable
+            name="homeActivity"
+            type="com.hjw.appframe.reader.ui.activity.HomeActivity"/>
+    </data>
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -23,15 +28,16 @@
                     android:id="@+id/bookShelfTab"
                     style="@style/app_HomeTab"
                     android:text="@string/app_main_tab_bookshelf"
-                    android:onClick="@{() ->  onBookShelfTabClick(this)}"
+                    android:onClick="@{homeActivity.onBookShelfTabClick}"
                     />
                 <View style="@style/app_Line.Horizontal"/>
 
                 <TextView
                     android:id="@+id/bookStoreTab"
                     style="@style/app_HomeTab"
-                    android:onClick="@{() ->  onBookStoreTabClick(this)}"
-                    android:text="@string/app_main_tab_bookstore" />
+                    android:text="@string/app_main_tab_bookstore"
+                    android:onClick="@{homeActivity.onBookStoreTabClick}"
+                    />
             </LinearLayout>
         </LinearLayout>
 

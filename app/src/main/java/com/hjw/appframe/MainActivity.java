@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjw.appframe.manager.ApiManager;
+import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseActivity;
 
 import butterknife.BindView;

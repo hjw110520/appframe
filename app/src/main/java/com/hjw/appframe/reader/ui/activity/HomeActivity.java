@@ -1,57 +1,48 @@
 package com.hjw.appframe.reader.ui.activity;
-
-import android.app.ActionBar;
-import android.databinding.BindingAdapter;
-import android.databinding.DataBindingComponent;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjw.appframe.R;
+import com.hjw.appframe.databinding.AppActivityHomeBinding;
 import com.hjw.appframe.reader.ui.fragment.BookstoreFragment;
 import com.hjw.bookbase.PathConfig;
-import com.hjw.commonui.BaseActivity;
+import com.hjw.commonui.BaseDataBindingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2018/5/14 0014.
  */
 
 @Route(path = PathConfig.PATH_HOME)
-public class HomeActivity extends BaseActivity{
+public class HomeActivity extends BaseDataBindingActivity{
     private Fragment bookShelfFragment,bookStoreFragment;
     private Fragment currentFragment;
     private List<TextView> tabs;
+    private AppActivityHomeBinding viewDataBinding;
 
-    TextView bookShelfTab;
-    TextView bookStoreTab;
     @Override
-    protected int provideLayoutResId() {
-        return R.layout.app_activity_home;
+    public ViewDataBinding initViewDataBinding() {
+        viewDataBinding = DataBindingUtil.setContentView(this,R.layout.app_activity_home);
+        return viewDataBinding;
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        viewDataBinding = (AppActivityHomeBinding)super.viewDataBinding;
         bookShelfFragment =  (Fragment) ARouter.getInstance().build(PathConfig.FRAGMENT_BOOK_SHELF).navigation();
         bookStoreFragment = new BookstoreFragment();
         tabs = new ArrayList<TextView>(2);
-        tabs.add(bookShelfTab);
-        tabs.add(bookStoreTab);
-        ActionBar actionBar = getActionBar();
-        /*if (actionBar != null) {
-            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM); //Enable自定义的View
-            actionBar.setCustomView(R.layout.actionbar_custom);//设置自定义的布局：actionbar_custom
-        }*/
-
+        tabs.add(viewDataBinding.bookShelfTab);
+        tabs.add(viewDataBinding.bookStoreTab);
     }
 
     @Override
@@ -59,13 +50,11 @@ public class HomeActivity extends BaseActivity{
         switchFragments(bookShelfFragment,0);
     }
 
-    //@OnClick(R.id.bookShelfTab)
-    public void onBookShelfTabClick(){
+    public void onBookShelfTabClick(View view){
         switchFragments(bookShelfFragment,0);
     }
 
-    //@OnClick(R.id.bookStoreTab)
-    public void onBookStoreTabClick(){
+    public void onBookStoreTabClick(View view){
         switchFragments(bookStoreFragment,1);
     }
 

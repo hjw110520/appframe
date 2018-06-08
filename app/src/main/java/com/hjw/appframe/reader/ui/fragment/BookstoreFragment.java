@@ -7,8 +7,8 @@ import android.widget.SearchView;
 
 import com.hjw.appframe.R;
 import com.hjw.appframe.manager.ApiManager;
-import com.hjw.appframe.model.BookSearchInfo;
 import com.hjw.appframe.reader.ui.adapter.BookStoreListAdapter;
+import com.hjw.bookbase.model.BookSearchInfo;
 import com.hjw.commonui.BaseFragment;
 import com.hjw.network.callback.SimpleCallBack;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;

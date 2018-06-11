@@ -14,8 +14,6 @@ import com.hjw.network.callback.SimpleCallBack;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
-
 /**
  * Created by hjw on 2018/5/20.
  */
@@ -28,7 +26,7 @@ public class BookIndexFragment extends BaseListFragment{
 
     @Override
     protected void initView(View rootView) {
-        ButterKnife.bind(this,mRootView);
+
     }
 
     @Override

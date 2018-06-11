@@ -39,7 +39,7 @@ dependencies {
     compile lib_info.junit
     compile lib_info.constraintLayout
 
-    releaseCompile project(path:':bookbase', configuration:'release')
-    debugCompile project(path:':bookbase', configuration:'debug')
-
+    compile project(':bookbase')
+    compile project(':bookstore')
+    compile project(':bookshelf')
 }

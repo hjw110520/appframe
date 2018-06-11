@@ -28,7 +28,8 @@
                     android:id="@+id/bookShelfTab"
                     style="@style/app_HomeTab"
                     android:text="@string/app_main_tab_bookshelf"
-                    android:onClick="@{homeActivity.onBookShelfTabClick}"
+                    android:clickable="true"
+                    android:onClick="onBookShelfTabClick"
                     />
                 <View style="@style/app_Line.Horizontal"/>
 
@@ -36,7 +37,8 @@
                     android:id="@+id/bookStoreTab"
                     style="@style/app_HomeTab"
                     android:text="@string/app_main_tab_bookstore"
-                    android:onClick="@{homeActivity.onBookStoreTabClick}"
+                    android:clickable="true"
+                    android:onClick="onBookStoreTabClick"
                     />
             </LinearLayout>
         </LinearLayout>

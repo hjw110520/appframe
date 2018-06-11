@@ -9,15 +9,11 @@ import com.hjw.appframe.manager.ApiManager;
 import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 @Route(path = PathConfig.PATH_MAIN)
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.testBtn) Button testBtn;
-    @BindView(R.id.contentTv)TextView contentTv;
+    Button testBtn;
+    TextView contentTv;
     @Override
     protected int provideLayoutResId() {
         return R.layout.app_activity_main;
@@ -25,7 +21,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        ButterKnife.bind(this,mRootView);
+        testBtn = mRootView.findViewById(R.id.testBtn);
+        contentTv = mRootView.findViewById(R.id.contentTv);
     }
 
     @Override
@@ -38,7 +35,6 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick(R.id.testBtn)
     public void onTestBtnClick(){
         ApiManager apiManager = new ApiManager();
         /*apiManager.getChapterDetail(new SimpleCallBack(){

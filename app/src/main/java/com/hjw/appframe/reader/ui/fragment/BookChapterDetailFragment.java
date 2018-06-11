@@ -17,20 +17,16 @@ import com.hjw.bookbase.model.ChapterDetail;
 import com.hjw.commonui.BaseFragment;
 import com.hjw.network.callback.SimpleCallBack;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
  * Created by hjw on 2018/5/20.
  */
 
 public class BookChapterDetailFragment extends BaseFragment{
 
-    @BindView(R.id.tv_chapter_detail)TextView chapterDetailTV;
-    @BindView(R.id.rv_bottomroot)View bottomRoot;
-    @BindView(R.id.rv_midroot)View midRoot;
-    @BindView(R.id.mScrollView)ScrollView mScrollView;
+    TextView chapterDetailTV;
+    View bottomRoot;
+    View midRoot;
+    ScrollView mScrollView;
     private ChapterDetail chapterDetail;
     @Override
     protected int provideLayoutResId() {
@@ -39,7 +35,10 @@ public class BookChapterDetailFragment extends BaseFragment{
 
     @Override
     protected void initView(View rootView) {
-        ButterKnife.bind(this,mRootView);
+        chapterDetailTV = mRootView.findViewById(R.id.tv_chapter_detail);
+        bottomRoot = mRootView.findViewById(R.id.rv_bottomroot);
+        midRoot = mRootView.findViewById(R.id.rv_midroot);
+        mScrollView = mRootView.findViewById(R.id.mScrollView);
     }
 
     @Override
@@ -53,7 +52,6 @@ public class BookChapterDetailFragment extends BaseFragment{
 
     }
 
-    @OnClick(R.id.tv_chapter_detail)
     public void onChapterDetailTVClick(View view){
         toggleBottomAndRootVisible();
     }
@@ -68,19 +66,16 @@ public class BookChapterDetailFragment extends BaseFragment{
         }
     }
 
-    @OnClick(R.id.tv_nextChapter)
     public void onNextChapterClick(View view){
         refreshData(chapterDetail.nextChapterUrl);
         toggleBottomAndRootVisible();
     }
 
-    @OnClick(R.id.tv_lastChapter)
     public void onLastChapterClick(View view){
         refreshData(chapterDetail.previousChapterUrl);
         toggleBottomAndRootVisible();
     }
 
-    @OnClick(R.id.chapter_index)
     public void onChapterIndexClick(View view){
         LocalBroadcasts.sendLocalBroadcast(CommonActions.BOOK_INDEX_OPEN);
         toggleBottomAndRootVisible();

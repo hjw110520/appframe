@@ -13,9 +13,6 @@ import com.hjw.bookbase.model.BookSearchInfo;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
@@ -59,11 +56,12 @@ public class BookStoreListAdapter extends RecyclerView.Adapter<BookStoreListAdap
 }
 
     class BookShelfListViewHolder extends RecyclerView.ViewHolder{
-        @BindView(R.id.tv_book_search_info) TextView bookSearchInfo;
-        @BindView(R.id.btn_collect) Button collect;
+        TextView bookSearchInfo;
+        Button collect;
         public BookShelfListViewHolder(View itemView){
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            bookSearchInfo = itemView.findViewById(R.id.tv_book_search_info);
+            collect = itemView.findViewById(R.id.btn_collect);
         }
     }
 }

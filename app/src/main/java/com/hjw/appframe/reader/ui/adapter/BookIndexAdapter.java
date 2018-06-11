@@ -14,9 +14,6 @@ import com.hjw.appframe.reader.ui.common.CommonActions;
 import com.hjw.base.LocalBroadcasts;
 import com.hjw.bookbase.model.BookIndex;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by Administrator on 2018/5/18 0018.
  */
@@ -51,11 +48,12 @@ public class BookIndexAdapter extends BaseListAdapter<BookIndexAdapter.BookIndex
 
 
     class BookIndexViewHolder extends RecyclerView.ViewHolder{
-        @BindView(R.id.tv_chapter_title) TextView chapterTitleTv;
-        @BindView(R.id.rootView) View rootView;
+        TextView chapterTitleTv;
+        View rootView;
         public BookIndexViewHolder(View itemView){
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            chapterTitleTv = itemView.findViewById(R.id.tv_chapter_title);
+            rootView = itemView.findViewById(R.id.rootView);
         }
     }
 }

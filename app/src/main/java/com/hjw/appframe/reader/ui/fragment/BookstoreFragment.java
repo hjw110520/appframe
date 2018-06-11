@@ -14,18 +14,14 @@ import com.hjw.network.callback.SimpleCallBack;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by Administrator on 2018/5/14 0014.
  */
 
 public class BookstoreFragment extends BaseFragment{
 
-    @BindView(R.id.bookSearchV) SearchView bookSearchV;
-    @BindView(R.id.xRecyclerView) XRecyclerView xRecyclerView;
+    SearchView bookSearchV;
+    XRecyclerView xRecyclerView;
     BookStoreListAdapter bookStoreListAdapter;
     @Override
     protected int provideLayoutResId() {
@@ -34,7 +30,8 @@ public class BookstoreFragment extends BaseFragment{
 
     @Override
     protected void initView(View rootView) {
-        ButterKnife.bind(this,mRootView);
+        bookSearchV = mRootView.findViewById(R.id.bookSearchV);
+        xRecyclerView = mRootView.findViewById(R.id.xRecyclerView);
         bookSearchV.setIconifiedByDefault(false);
         bookSearchV.setSubmitButtonEnabled(true);
         bookSearchV.setQueryHint("查找");

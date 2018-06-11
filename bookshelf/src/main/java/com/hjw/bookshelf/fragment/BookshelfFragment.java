@@ -12,17 +12,13 @@ import com.hjw.bookshelf.common.BookShelfHelper;
 import com.hjw.commonui.BaseFragment;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 /**
  * Created by Administrator on 2018/5/14 0014.
  */
 @Route(path = PathConfig.FRAGMENT_BOOK_SHELF)
 public class BookshelfFragment extends BaseFragment implements XRecyclerView.LoadingListener{
 
-    @BindView(R.id.xRecyclerView)XRecyclerView xRecyclerView;
+    XRecyclerView xRecyclerView;
     BookShelfListAdapter bookShelfListAdapter;
 
     @Override
@@ -32,7 +28,7 @@ public class BookshelfFragment extends BaseFragment implements XRecyclerView.Loa
 
     @Override
     protected void initView(View rootView) {
-        ButterKnife.bind(this,mRootView);
+        xRecyclerView = mRootView.findViewById(R.id.xRecyclerView);
         initXRecyclerView();
     }
 
@@ -57,7 +53,6 @@ public class BookshelfFragment extends BaseFragment implements XRecyclerView.Loa
         xRecyclerView.refreshComplete();
     }
 
-    @OnClick(R.id.btnClear)
     public void onBtnClearClick(View view){
         BookShelfHelper bookShelfHelper = new BookShelfHelper();
         bookShelfHelper.clearBookShelf(fragmentActivity);

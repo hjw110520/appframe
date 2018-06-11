@@ -13,16 +13,13 @@ import com.hjw.appframe.reader.ui.fragment.BookIndexFragment;
 import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by Administrator on 2018/5/22 0022.
  */
 
 @Route(path = PathConfig.PATH_BOOK_CHAPTER_DETAIL)
 public class BookChapterDetailActivity extends BaseActivity{
-    @BindView(R.id.mDrawerLayout) DrawerLayout mDrawerLayout;
+    DrawerLayout mDrawerLayout;
     @Override
     protected int provideLayoutResId() {
         return R.layout.app_activity_book_chapter_detail;
@@ -30,6 +27,7 @@ public class BookChapterDetailActivity extends BaseActivity{
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        mDrawerLayout = mRootView.findViewById(R.id.mDrawerLayout);
         BookChapterDetailFragment fragment = new BookChapterDetailFragment();
         getSupportFragmentManager()
                 .beginTransaction()
@@ -41,7 +39,6 @@ public class BookChapterDetailActivity extends BaseActivity{
                 .beginTransaction()
                 .add(R.id.left_fragment_container, indexFragment, "leftcontent")
                 .commit();
-        ButterKnife.bind(this,mRootView);
     }
 
     @Override

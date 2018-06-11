@@ -12,6 +12,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjw.appframe.R;
 import com.hjw.appframe.databinding.AppActivityHomeBinding;
 import com.hjw.appframe.reader.ui.fragment.BookstoreFragment;
+import com.hjw.base.utils.LogUtils;
 import com.hjw.bookbase.PathConfig;
 import com.hjw.commonui.BaseDataBindingActivity;
 
@@ -37,7 +38,6 @@ public class HomeActivity extends BaseDataBindingActivity{
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        viewDataBinding = (AppActivityHomeBinding)super.viewDataBinding;
         bookShelfFragment =  (Fragment) ARouter.getInstance().build(PathConfig.FRAGMENT_BOOK_SHELF).navigation();
         bookStoreFragment = new BookstoreFragment();
         tabs = new ArrayList<TextView>(2);
@@ -51,10 +51,12 @@ public class HomeActivity extends BaseDataBindingActivity{
     }
 
     public void onBookShelfTabClick(View view){
+        LogUtils.debug("onBookStoreTabClick");
         switchFragments(bookShelfFragment,0);
     }
 
     public void onBookStoreTabClick(View view){
+        LogUtils.debug("onBookStoreTabClick");
         switchFragments(bookStoreFragment,1);
     }
 

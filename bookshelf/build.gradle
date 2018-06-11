@@ -1,4 +1,4 @@
-def isDebug = true
+def isDebug = false
 def config_info = rootProject.ext.android
 def lib_info = rootProject.ext.dependencies
 if (isDebug.toBoolean()) {
